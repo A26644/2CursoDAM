@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php include_once './validarUsuario.php'; ?>
+
 
 <?php session_start();
 if (isset($_SESSION['usuario']) && $_SESSION['usuario'] != '') {
@@ -36,10 +38,10 @@ if ($user == '' || $pass == '') {
 <body>
     <form action="login.php">
         <label for="usuario">Usuario:
-            <input type="text" id="name" name="user" value="<?php echo $usuario ?>"><br>
+            <input type="text" id="name" name="user" value=""><br>
         </label>
         <label for="pass">Contraseña:
-            <input type="pass" id="pass" name="pass" value="<?php echo $pass ?>"><br>
+            <input type="pass" id="pass" name="pass" value=""><br>
         </label>
         <span id="msj"></span>
         <button type="button" id="aceptar" onclick="">Aceptar</button>

@@ -6,4 +6,12 @@ function validar() {
         mensaje = "Debes completar los campos";
     }
     document.getElementById("msj").innerHTML = mensaje;
+    fetch("url")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => {
+            console.log(err);
+        })
 }

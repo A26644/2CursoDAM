@@ -20,6 +20,7 @@ if ($user == '' || $pass == '') {
     }
 }
 
+
 ?>
 
 <html>
@@ -34,6 +35,7 @@ if ($user == '' || $pass == '') {
 </head>
 
 <body>
+    <?php include './validarUsuario.php'; ?>
     <form action="login.php">
         <label for="usuario">Usuario:
             <input type="text" id="name" name="user" value="<?php echo $usuario ?>"><br>
