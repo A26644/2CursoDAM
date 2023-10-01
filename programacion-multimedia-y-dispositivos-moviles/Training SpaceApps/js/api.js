@@ -6,21 +6,21 @@ let apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?so
 // Realizar una solicitud GET utilizando Fetch API
 fetch(apiUrl)
     .then((response) => {
-    if (!response.ok) {
-        throw new Error('Error en la solicitud al API');
-    }
-    return response.json();
-})
+        if (!response.ok) {
+            throw new Error('Error en la solicitud al API');
+        }
+        return response.json();
+    })
     .then((data) => {
-    // Los datos de las fotos se encuentran en el objeto 'data'
-    console.log(data);
-    let id = document.getElementById("container");
-    id.innerHTML = "";
-    data.photos.forEach((element) => {
-        let img = document.createElement("div");
-        img.classList.add("rover-photo");
-        img.innerHTML = `
-                <img id="img"
+        // Los datos de las fotos se encuentran en el objeto 'data'
+        console.log(data);
+        let id = document.getElementById("container");
+        id.innerHTML = "";
+        data.photos.forEach((element) => {
+            let img = document.createElement("div");
+            img.classList.add("rover-photo");
+            img.innerHTML = `
+                <img class="img"
                 src="${element.img_src}"
                 alt="Mars Rover Photo">
             <div class="rover-details">
@@ -32,10 +32,10 @@ fetch(apiUrl)
                 <p>Status: Active</p>
             </div>
             `;
-        id.appendChild(img);
-    });
-    // Aquí puedes procesar los datos o mostrar las imágenes en tu aplicación
-})
+            id.appendChild(img);
+        });
+        // Aquí puedes procesar los datos o mostrar las imágenes en tu aplicación
+    })
     .catch((error) => {
-    console.error('Ocurrió un error:', error);
-});
+        console.error('Ocurrió un error:', error);
+    });
