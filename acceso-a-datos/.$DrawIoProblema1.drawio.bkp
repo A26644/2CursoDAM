@@ -1,0 +1,22 @@
+<mxfile host="Electron" modified="2023-10-03T07:16:44.733Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="Te2HWBkP677os54rCfz3" version="22.0.1" type="device">
+  <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
+    <mxGraphModel dx="1017" dy="1181" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n0mMWxhvP-sqwE2bE1Zy-1" value="&lt;b&gt;PARTICULAR&lt;/b&gt;&lt;br&gt;Particular_ID&lt;br&gt;Nombre&lt;br&gt;DNI&lt;br&gt;Teléfono&lt;br&gt;Dirección&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="605" width="210" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="n0mMWxhvP-sqwE2bE1Zy-2" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="675" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n0mMWxhvP-sqwE2bE1Zy-4" value="&lt;b&gt;NOTA DE PAGO&lt;br&gt;&lt;/b&gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="585" width="120" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="n0mMWxhvP-sqwE2bE1Zy-5" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

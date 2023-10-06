@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "database-2.cpmqkeqmhomo.us-east-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "mySQLAWS",
+            "database": "SPACEAPPS",
+            "username": "admin",
+            "password": "12344321"
+        }
+    ]
+}
