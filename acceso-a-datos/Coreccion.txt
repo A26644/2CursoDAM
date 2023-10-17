@@ -1,0 +1,7 @@
+No se pone la PK en las NM en los ER
+Falta el campo Coste en la tabla Juguete (pero mejor ponerlo en la NM)
+Falta firma de recepción de albarán
+Falta el campo firma en el particular
+Falta el campo Stock en la tabla Juguete
+El campo Nombre en el PEDIDO_EMPRESA no es necesario
+Los verbos en infinitivo
