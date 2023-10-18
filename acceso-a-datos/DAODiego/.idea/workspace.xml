@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e6b205-ac32-4dc7-bb81-8e89dfbe995c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AlbaranDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/EmpresaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/IDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/JugueteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ParticularDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/PedidoEmpresaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/PedidoParticularDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Albaran.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Empresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Juguete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Particular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/PedidoEmpresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/PedidoParticular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sql/IMotorSQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sql/MotorOracle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sql/MotorPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ARCHIVOsql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../ARCHIVOsql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Problema1Alternativo.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../Problema1Alternativo.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL Problema 1 Oracle.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../space-apps/archivoSQL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../space-apps/archivoSQL.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion-de-servicios-y-procesos/hacerHuevo.pnml" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion-de-servicios-y-procesos/hacerHuevo.pnml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +76,7 @@
       <workItem from="1696856512828" duration="4251000" />
       <workItem from="1696860805082" duration="2041000" />
       <workItem from="1697377186926" duration="8000" />
+      <workItem from="1697527893782" duration="35000" />
     </task>
     <servers />
   </component>
