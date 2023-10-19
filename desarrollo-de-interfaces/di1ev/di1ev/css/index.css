@@ -1,0 +1,21 @@
+.divLogotipo{
+    text-align: left;
+}
+
+.divLogotipo img{
+    height: 3em;
+}
+
+.divLog{
+    text-align: right;
+}
+
+.divLog img{
+    height: 2em;
+}
+
+.divTituloApp{
+    text-align: center;
+    color: rgb(217, 27, 255);
+    font-size: 1.5rem;
+}

@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "src\\main\\resources",
+        "src\\test\\java",
+        "src\\test\\resources",
+        "target\\generated-sources\\annotations",
+        "target\\generated-test-sources\\test-annotations",
+        "demo\\src\\main\\java\\com\\example\\demo",
+        "demo\\src\\main\\java\\com\\example\\demo\\controller"
+    ]
+}
