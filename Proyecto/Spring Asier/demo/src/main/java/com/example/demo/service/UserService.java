@@ -1,16 +1,28 @@
 package com.example.demo.service;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import java.util.List;
 
 import com.example.demo.dto.UserDTO;
 import com.example.demo.interfaces.IRepository;
 import com.example.demo.interfaces.IService;
+import com.example.demo.model.USUARIO;
 
+@Service
 public class UserService implements IService<UserDTO, Integer> {
 
     @Autowired
     IRepository repository;
+
+    public List<USUARIO> gettAll() {
+
+        return repository.findAll();
+
+    }
 
     @Override
     public UserDTO getById(Integer id) {
@@ -34,11 +46,6 @@ public class UserService implements IService<UserDTO, Integer> {
     public void delete(Integer id) {
 
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
-
-    }
-
-    public List<USUARIO> getAll() {
-        return repository.findAll();
 
     }
 

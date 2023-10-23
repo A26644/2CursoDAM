@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -7,23 +8,25 @@ import jakarta.persistence.Id;
 public class USUARIO {
 
     @Id
-    Long USUARIO_ID;
+    @Column(name = "usuario_ID")
+    Long id;
+
     String USUARIO_NAME;
 
     public USUARIO() {
     }
 
-    public USUARIO(Long uSUARIO_ID, String uSUARIO_NAME) {
-        USUARIO_ID = uSUARIO_ID;
+    public USUARIO(Long usuario_ID, String uSUARIO_NAME) {
+        id = usuario_ID;
         USUARIO_NAME = uSUARIO_NAME;
     }
 
     public Long getUSUARIO_ID() {
-        return USUARIO_ID;
+        return id;
     }
 
     public void setUSUARIO_ID(Long uSUARIO_ID) {
-        USUARIO_ID = uSUARIO_ID;
+        id = uSUARIO_ID;
     }
 
     public String getUSUARIO_NAME() {

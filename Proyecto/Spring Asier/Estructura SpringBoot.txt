@@ -1,0 +1,31 @@
+src/main/java/com/tuempresa/tuproyecto/
+|-- controller/
+|   |-- HomeController.java
+|   |-- UserController.java
+|   |-- ProductController.java
+|   |-- ...
+|-- service/
+|   |-- UserService.java
+|   |-- ProductService.java
+|   |-- ...
+|-- repository/
+|   |-- UserRepository.java
+|   |-- ProductRepository.java
+|   |-- ...
+|-- model/
+|   |-- User.java
+|   |-- Product.java
+|   |-- ...
+|-- exception/
+|   |-- CustomException.java
+|-- security/
+|   |-- SecurityConfig.java
+|-- dto/
+|   |-- UserDTO.java
+|   |-- ProductDTO.java
+|   |-- ...
+|-- util/
+|   |-- ValidationUtils.java
+|   |-- ...
+|-- Application.java
+|-- ...
