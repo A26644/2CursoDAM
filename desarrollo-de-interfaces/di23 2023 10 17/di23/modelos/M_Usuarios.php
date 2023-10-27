@@ -4,7 +4,7 @@ require_once 'modelos/DAO.php';
 final class M_Usuarios
 {
     public $DAO = new DAO();
-    public funcion
+
 }
 
 ?>
