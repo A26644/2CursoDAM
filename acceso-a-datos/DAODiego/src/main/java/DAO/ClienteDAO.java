@@ -24,7 +24,7 @@ public class ClienteDAO implements IDAO<Cliente> {
     public ArrayList<Cliente> findAll() {
         try {
             lstCliente = new ArrayList<>();
-            String sql = "SELECT * FROM EMPRESA";
+            String sql = "SELECT * FROM CLIENTE";
             ResultSet rs = pg.executeQuery(sql);
             while (rs.next()) {
                 Cliente cliente = new Cliente();

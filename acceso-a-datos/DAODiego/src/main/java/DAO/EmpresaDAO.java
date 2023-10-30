@@ -25,7 +25,7 @@ public class EmpresaDAO implements IDAO<Empresa> {
                 empresa.setEmpresaCif(rs.getString("EMPRESA_CIF"));
                 empresa.setEmpresaDireccionPostal(rs.getString("EMPRESA_DIRECCIONPOSTAL"));
                 empresa.setEmpresaDireccionWeb(rs.getString("EMPRESA_DIRECCIONWEB"));
-                empresa.setEmpresaTelefono(rs.getInt("EMPRESA_TELEFONO"));
+                empresa.setEmpresaTelefono(rs.getString("EMPRESA_TELEFONO"));
                 lstEmpresa.add(empresa);
             }
             return lstEmpresa;
@@ -48,7 +48,7 @@ public class EmpresaDAO implements IDAO<Empresa> {
                 empresa.setEmpresaCif(rs.getString("EMPRESA_CIF"));
                 empresa.setEmpresaDireccionPostal(rs.getString("EMPRESA_DIRECCIONPOSTAL"));
                 empresa.setEmpresaDireccionWeb(rs.getString("EMPRESA_DIRECCIONWEB"));
-                empresa.setEmpresaTelefono(rs.getInt("EMPRESA_TELEFONO"));
+                empresa.setEmpresaTelefono(rs.getString("EMPRESA_TELEFONO"));
                 lstEmpresa.add(empresa);
             }
             return lstEmpresa;
