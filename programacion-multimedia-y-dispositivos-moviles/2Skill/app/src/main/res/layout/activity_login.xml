@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/main_color"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textSize="50dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:layout_marginTop="120dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/UsernameId"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Username"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:ems="10"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginTop="128dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:inputType="text"
+                 />
+            <EditText
+                android:id="@+id/PasswordId"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Password"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:ems="10"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:inputType="textPassword"
+                />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forget your password?"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button2"
+                style="@style/TextAppearance.AppCompat.Widget.Button"
+                android:layout_marginTop="64dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/main_page_button_background"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:layout_marginTop="32dp"
+                android:textColor="@color/white"
+                android:text="Don't have an account?" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:text="Register" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

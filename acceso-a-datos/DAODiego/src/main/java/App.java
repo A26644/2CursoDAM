@@ -1,14 +1,14 @@
 
-import DAO.AlbaranDAO;
-import model.Albaran;
-import sql.MotorPostgres;
+import java.util.ArrayList;
+
+import DAO.EmpresaDAO;
+import model.Empresa;
 
 public class App {
     public static void main(String[] args) {
-        MotorPostgres pg = new MotorPostgres();
-        AlbaranDAO adao = new AlbaranDAO();
-        Albaran albaran = new Albaran();
-        adao.update(albaran);
 
+        ArrayList<Empresa> lstEmpresa = new EmpresaDAO().findAll();
+        String xml = XMLMapper.transformar("Empresas", lstEmpresa);
+        XMLMapper.exportarArchivo(xml, "./archivoExportado");
     }
 }

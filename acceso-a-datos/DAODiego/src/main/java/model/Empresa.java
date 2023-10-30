@@ -1,12 +1,13 @@
 package model;
 
 public class Empresa {
+
     private int empresaId;
     private String empresaNombre;
     private String empresaCif;
     private String empresaDireccionPostal;
     private String empresaDireccionWeb;
-    private int empresaTelefono;
+    private String empresaTelefono;
 
     public void setEmpresaId(int empresaId) {
         this.empresaId = empresaId;
@@ -28,8 +29,15 @@ public class Empresa {
         this.empresaDireccionWeb = empresaDireccionWeb;
     }
 
-    public void setEmpresaTelefono(int empresaTelefono) {
+    public void setEmpresaTelefono(String empresaTelefono) {
         this.empresaTelefono = empresaTelefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa [empresaId=" + empresaId + ", empresaNombre=" + empresaNombre + ", empresaCif=" + empresaCif
+                + ", empresaDireccionPostal=" + empresaDireccionPostal + ", empresaDireccionWeb=" + empresaDireccionWeb
+                + ", empresaTelefono=" + empresaTelefono + "]";
     }
 
 }

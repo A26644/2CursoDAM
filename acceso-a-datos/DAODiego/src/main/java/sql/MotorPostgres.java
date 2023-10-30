@@ -37,7 +37,6 @@ public class MotorPostgres implements IMotorSQL {
             System.out.println("Error: " + e);
             return null;
         } finally {
-            this.disconnect();
         }
     }
 
@@ -52,7 +51,6 @@ public class MotorPostgres implements IMotorSQL {
             System.out.println("Error: " + e);
             return 0;
         } finally {
-            this.disconnect();
         }
     }
 

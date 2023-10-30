@@ -21,7 +21,7 @@ public class ClienteAlbaranDAO implements IDAO<ClienteAlbaran> {
 
     @Override
     public ArrayList<ClienteAlbaran> findAll() {
-
+        throw new UnsupportedOperationException("Unimplemented method 'find'");
     }
 
     @Override
