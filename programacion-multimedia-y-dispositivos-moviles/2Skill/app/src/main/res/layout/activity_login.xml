@@ -4,10 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/main_color"
+<<<<<<< HEAD
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:layout_height="match_parent"
     tools:context=".Activities.LoginActivity">
+=======
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+>>>>>>> b0d09f5999bc28bda1fb589d6b86631fe05fe644
 
     <ScrollView
         android:layout_width="match_parent"
@@ -73,7 +78,11 @@
                 android:layout_marginTop="16dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+<<<<<<< HEAD
                 android:id="@+id/loginBtn"
+=======
+                android:id="@+id/button2"
+>>>>>>> b0d09f5999bc28bda1fb589d6b86631fe05fe644
                 style="@style/TextAppearance.AppCompat.Widget.Button"
                 android:layout_marginTop="64dp"
                 android:layout_marginStart="32dp"
