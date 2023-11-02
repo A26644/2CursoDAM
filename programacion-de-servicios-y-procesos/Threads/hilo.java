@@ -10,6 +10,15 @@ public class Hilo extends Thread {
     }
 
     public void run() {
-        System.out.println("Hola mundo, soy el hilo " + numeroHilo);
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Hola mundo, soy el hilo " + numeroHilo);
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
     }
 }

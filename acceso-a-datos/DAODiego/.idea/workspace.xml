@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e6b205-ac32-4dc7-bb81-8e89dfbe995c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../INSERTS.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Nuevo Documento de texto.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Nuevo Microsoft Publisher Document.pub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../programacion-multimedia-y-dispositivos-moviles/1Skill - Noé Orga Gutiérrez.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ARCHIVOsql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../ARCHIVOsql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ClienteAlbaranDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ClienteAlbaranDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/EmpresaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/EmpresaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sql/MotorPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sql/MotorPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Problema1Alternativo.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../Problema1Alternativo.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../desarrollo-de-interfaces/di23 2023 10 17/di23/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../desarrollo-de-interfaces/di23 2023 10 17/di23/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../desarrollo-de-interfaces/di23 2023 10 17/di23/modelos/DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../desarrollo-de-interfaces/di23 2023 10 17/di23/modelos/DAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archivoExportado" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion-de-servicios-y-procesos/Threads/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion-de-servicios-y-procesos/Threads/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion-de-servicios-y-procesos/Threads/hilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion-de-servicios-y-procesos/Threads/hilo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +45,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Noe56/Documents/GitHub/2CursoDAM/acceso-a-datos/DAODiego",
+    "last_opened_file_path": "C:/Users/Noe56/Documents/GitHub/java-web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,10 +53,11 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Smart Tomcat.Unnamed">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="DAODiego" />
@@ -74,6 +65,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" nameIsGenerated="true">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="" />
+      <option name="contextPath" value="" />
+      <option name="docBase" value="" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/8.5.95" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../../../Program Files (x86)/Tomcat/apache-tomcat-8.5.95" />
+          <option name="version" value="8.5.95.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Smart Tomcat.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
@@ -93,6 +123,7 @@
       <workItem from="1697377186926" duration="8000" />
       <workItem from="1697527893782" duration="35000" />
       <workItem from="1698682352256" duration="29000" />
+      <workItem from="1698743239977" duration="385000" />
     </task>
     <servers />
   </component>

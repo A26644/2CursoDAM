@@ -1,0 +1,2 @@
+radio buttons con label para no tener que clickar justo en el circulo
+calendario mejor no
