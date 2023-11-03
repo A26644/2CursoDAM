@@ -33,11 +33,47 @@ public class Empresa {
         this.empresaTelefono = empresaTelefono;
     }
 
+    public Empresa() {
+    }
+
+    public Empresa(String empresaNombre, String empresaCif, String empresaDireccionPostal, String empresaDireccionWeb,
+            String empresaTelefono) {
+        this.empresaNombre = empresaNombre;
+        this.empresaCif = empresaCif;
+        this.empresaDireccionPostal = empresaDireccionPostal;
+        this.empresaDireccionWeb = empresaDireccionWeb;
+        this.empresaTelefono = empresaTelefono;
+    }
+
     @Override
     public String toString() {
         return "Empresa [empresaId=" + empresaId + ", empresaNombre=" + empresaNombre + ", empresaCif=" + empresaCif
                 + ", empresaDireccionPostal=" + empresaDireccionPostal + ", empresaDireccionWeb=" + empresaDireccionWeb
                 + ", empresaTelefono=" + empresaTelefono + "]";
+    }
+
+    public int getEmpresaId() {
+        return empresaId;
+    }
+
+    public String getEmpresaNombre() {
+        return empresaNombre;
+    }
+
+    public String getEmpresaCif() {
+        return empresaCif;
+    }
+
+    public String getEmpresaDireccionPostal() {
+        return empresaDireccionPostal;
+    }
+
+    public String getEmpresaDireccionWeb() {
+        return empresaDireccionWeb;
+    }
+
+    public String getEmpresaTelefono() {
+        return empresaTelefono;
     }
 
 }
