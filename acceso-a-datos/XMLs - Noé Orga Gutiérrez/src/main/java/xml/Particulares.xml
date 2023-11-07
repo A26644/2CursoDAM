@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Particulares>
+    <model.Particular>
+        <particularId>1</particularId>
+        <particularNombre>Juan</particularNombre>
+        <particularApellido>Pérez</particularApellido>
+        <particularTelefono>555-123-4567</particularTelefono>
+        <particularDireccion>123 Calle</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>2</particularId>
+        <particularNombre>María</particularNombre>
+        <particularApellido>López</particularApellido>
+        <particularTelefono>555-987-6543</particularTelefono>
+        <particularDireccion>456 Avenida</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>3</particularId>
+        <particularNombre>Carlos</particularNombre>
+        <particularApellido>González</particularApellido>
+        <particularTelefono>555-567-8901</particularTelefono>
+        <particularDireccion>789 Calle</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>4</particularId>
+        <particularNombre>Luis</particularNombre>
+        <particularApellido>Martínez</particularApellido>
+        <particularTelefono>555-234-5678</particularTelefono>
+        <particularDireccion>101 Calle</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>5</particularId>
+        <particularNombre>Ana</particularNombre>
+        <particularApellido>Rodríguez</particularApellido>
+        <particularTelefono>555-678-1234</particularTelefono>
+        <particularDireccion>222 Avenida</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>6</particularId>
+        <particularNombre>Sofía</particularNombre>
+        <particularApellido>Fernández</particularApellido>
+        <particularTelefono>555-345-6789</particularTelefono>
+        <particularDireccion>333 Calle</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>7</particularId>
+        <particularNombre>Pedro</particularNombre>
+        <particularApellido>Sánchez</particularApellido>
+        <particularTelefono>555-876-5432</particularTelefono>
+        <particularDireccion>444 Avenida</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>8</particularId>
+        <particularNombre>Laura</particularNombre>
+        <particularApellido>Ramírez</particularApellido>
+        <particularTelefono>555-432-1098</particularTelefono>
+        <particularDireccion>555 Calle</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>9</particularId>
+        <particularNombre>Miguel</particularNombre>
+        <particularApellido>Hernández</particularApellido>
+        <particularTelefono>555-210-9876</particularTelefono>
+        <particularDireccion>666 Avenida</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+    <model.Particular>
+        <particularId>10</particularId>
+        <particularNombre>Isabel</particularNombre>
+        <particularApellido>Gómez</particularApellido>
+        <particularTelefono>555-789-0123</particularTelefono>
+        <particularDireccion>777 Calle</particularDireccion>
+        <firma>null</firma>
+    </model.Particular>
+</Particulares>

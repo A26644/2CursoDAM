@@ -51,21 +51,49 @@ class M_Usuarios extends Modelo
         extract($filtros);
         $pass = md5($pass);
 
-        $SQL = "SELECT * FROM usuarios WHERE 1=1 ";
+        $SQL = "SELECT * FROM usuarios WHERE ";
 
         if ($usuario != '') {
             $usuario = addslashes($usuario);
-            $SQL .= " AND login = '$usuario' ";
+            $SQL .= "login = '$usuario' ";
         }
 
         if ($pass != '') {
             $pass = addslashes($pass);
-            $SQL .= " AND pass = '$pass' ";
+            $SQL .= "AND pass = '$pass' ";
         }
 
-        echo $SQL;
+        echo ($SQL);
         $usuarios = $this->DAO->consultar($SQL);
 
         return $usuarios;
     }
+    public function introducirUsuario($filtros = array())
+    {
+        // COGER PARAMETROS
+        $intEmail = '';
+        $intLogin = '';
+        $intNombre = '';
+        $intApellido1 = '';
+        $intApellido2 = '';
+        $intSexo = '';
+        $intActivo = '';
+        $intPass = '';
+        extract($filtros);
+        $intPass = md5($intPass);
+        if ($intActivo == 'on') {
+            $intActivo = 'S';
+        } else {
+            $intActivo = 'N';
+        }
+        // MONTAR LA SQL
+        $SQL = "INSERT INTO usuarios (nombre, apellido_1, apellido_2, sexo, fecha_Alta, mail, login, pass, activo) VALUES ('$intNombre', '$intApellido1', '$intApellido2', '$intSexo', NOW(), '$intEmail',  '$intLogin', '$intPass', '$intActivo' )";
+
+
+        echo ($SQL);
+        $usuarios = $this->DAO->insertar($SQL);
+        echo ($usuarios);
+        return $usuarios;
+    }
+
 }

@@ -1,5 +1,4 @@
 <?php
-echo 'Hola desde usuarios';
 ?>
 <form id="formularioBuscar" name="formBuscar">
 

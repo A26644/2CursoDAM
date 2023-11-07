@@ -69,9 +69,12 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] != '') {
                                         aria-expanded="false">CRUD's</a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item"
-                                                onclick="getVistaMenuSeleccionado('Usuarios','getVistaUsuarios')">Usuarios</a>
+                                                onclick="getVistaMenuSeleccionado('Usuarios','getVistaUsuarios')">Buscar
+                                                Usuarios</a>
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item"
+                                                onclick="getVistaMenuSeleccionado('Usuarios','getVistaIntroducirUsuarios')"
+                                                href="#">Introducir usuarios</a></li>
                                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                                     </ul>
                                 </li>

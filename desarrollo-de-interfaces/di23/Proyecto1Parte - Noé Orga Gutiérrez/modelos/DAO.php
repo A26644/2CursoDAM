@@ -36,7 +36,7 @@ class DAO
         $this->conexion->query($SQL, MYSQLI_USE_RESULT);
         if ($this->conexion->connect_errno) {
             die('Error insertar BD: ' . $SQL);
-            return '';
+
         } else {
             return $this->conexion->insert_id;
         }

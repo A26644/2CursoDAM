@@ -13,7 +13,6 @@ if ($usuario == '' || $pass == '') {
     $objUsuarios = new C_Usuarios();
     $datos['usuario'] = $usuario;
     $datos['pass'] = $pass;
-    // $resultado=$objUsuarios->validarUsuarios($datos);
 
     $resultado = $objUsuarios->validarUsuarios(
         array(
@@ -22,7 +21,6 @@ if ($usuario == '' || $pass == '') {
         )
     );
 
-    echo ("##" . $resultado . "#");
     if ($resultado == 'S') {
         header('Location: index.php');
     } else {

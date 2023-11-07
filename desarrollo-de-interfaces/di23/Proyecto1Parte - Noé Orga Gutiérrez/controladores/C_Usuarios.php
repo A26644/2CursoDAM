@@ -1,43 +1,61 @@
 <?php
-    require_once 'controladores/Controlador.php';
-    require_once 'vistas/Vista.php';
-    require_once 'modelos/M_Usuarios.php';    
+require_once 'controladores/Controlador.php';
+require_once 'vistas/Vista.php';
+require_once 'modelos/M_Usuarios.php';
 
-    class C_Usuarios extends Controlador{
+class C_Usuarios extends Controlador
+{
 
-        private $modelo;
+    private $modelo;
 
-        public function __construct(){
-            parent::__construct();
-            $this->modelo=new M_Usuarios();
+    public function __construct()
+    {
+        parent::__construct();
+        $this->modelo = new M_Usuarios();
+    }
+
+    public function validarUsuarios($filtros)
+    {
+        $valido = 'N';
+        // if($usuario=='javier' && $pass=='123'){
+        //     $_SESSION['usuario']=$usuario;
+        //     $valido='S';
+        // }
+        $usuarios = $this->modelo->getUser($filtros);
+
+        if (!empty($usuarios)) {
+            $_SESSION['usuario'] = $usuarios[0]['login'];
+            $valido = "S";
         }
+        return $valido;
+    }
 
-        public function validarUsuarios($filtros){
-            $valido='N';
-            // if($usuario=='javier' && $pass=='123'){
-            //     $_SESSION['usuario']=$usuario;
-            //     $valido='S';   
-            // }
-            $usuarios=$this->modelo->getUser($filtros);
+    public function getVistaUsuarios()
+    {
+        Vista::render('vistas/Usuarios/V_Usuarios.php');
+    }
+    public function getVistaIntroducirUsuarios()
+    {
+        Vista::render('vistas/usuarios/V_IntroducirUsuarios.php');
+    }
 
-            if(!empty($usuarios)){
-                $_SESSION['usuario']=$usuarios[0]['login'];
-                $valido = "S";
-            }
-            return $valido;
-        }
+    public function buscarUsuarios($filtros = array())
+    {
+        $usuarios = $this->modelo->buscarUsuarios($filtros);
 
-        public function getVistaUsuarios(){
-            Vista::render('vistas/Usuarios/V_Usuarios.php');
-        }
-
-        public function buscarUsuarios($filtros=array()){
-            $usuarios=$this->modelo->buscarUsuarios($filtros);
-
-            Vista::render('vistas/Usuarios/V_Usuarios_Listado.php',
-                          array('usuarios'=>$usuarios));
-
-        }
+        Vista::render(
+            'vistas/Usuarios/V_Usuarios_Listado.php',
+            array('usuarios' => $usuarios)
+        );
 
     }
+    public function introducirUsuario($filtros = array())
+    {
+        $this->modelo->introducirUsuario($filtros);
+
+
+
+    }
+
+}
 ?>
