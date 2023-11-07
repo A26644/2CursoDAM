@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".Activity.MainActivity">
+=======
+    tools:context=".main">
+>>>>>>> f4dcbc965e7d74620deebccd8a8816022b9e0b0d
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
