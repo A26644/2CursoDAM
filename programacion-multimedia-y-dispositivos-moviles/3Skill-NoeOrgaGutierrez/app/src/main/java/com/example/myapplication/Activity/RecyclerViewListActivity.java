@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.myapplication.Activity;
 
 public class RecyclerViewListActivity {
@@ -25,4 +26,7 @@ public class RecyclerViewListActivity {
     public void setText(String text) {
         this.text = text;
     }
+=======
+package com.example.myapplication;public class recyclerview_list {
+>>>>>>> f4dcbc965e7d74620deebccd8a8816022b9e0b0d
 }

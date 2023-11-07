@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.myapplication.Adapter;
 
 import android.content.Context;
@@ -63,4 +64,7 @@ public class RecyclerViewListAdapter extends RecyclerView.Adapter<RecyclerViewLi
             textView = itemView.findViewById(R.id.textView);
         }
     }
+=======
+package com.example.myapplication.Adapter;public class RecyclerViewListAdapter {
+>>>>>>> f4dcbc965e7d74620deebccd8a8816022b9e0b0d
 }
