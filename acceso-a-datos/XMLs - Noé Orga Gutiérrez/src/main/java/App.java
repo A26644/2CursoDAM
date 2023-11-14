@@ -14,6 +14,7 @@ import JavaXML.Inserts;
 import JavaXML.XMLMapper;
 import model.Empresa;
 import model.Particular;
+import sql.MotorPostgres;
 
 public class App {
     public static void main(String[] args) {
@@ -23,6 +24,8 @@ public class App {
         int eleccion = scanner.nextInt();
         if (eleccion == 1) {
             try {
+                new MotorPostgres().connect();
+
                 File xmlFile;
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder builder = factory.newDocumentBuilder();

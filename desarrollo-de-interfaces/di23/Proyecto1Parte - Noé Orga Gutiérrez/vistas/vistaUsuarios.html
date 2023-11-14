@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='../js/Usuarios.js'></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../css/vistaUsuarios.css">
+    </head>
+
+    <body>
+        <div id="header">
+            <div>ID</div>
+            <div>Apellido 1</div>
+            <div>Apellido 2</div>
+            <div>Nombre</div>
+            <div>Activo</div>
+            <div>Fecha Alta</div>
+            <div>Editar</div>
+            <div>Eliminar</div>
+        </div>
+        <div class="contenidoCargado">
+            <div class="fila" id="fila1">
+                <div class="campo">1</div>
+                <div class="campo id1">Orga</div>
+                <div class="campo id1">Gutierrez</div>
+                <div class="campo id1">Noe</div>
+                <div class="campo id1">Activo</div>
+                <div class="campo id1">20022-2341</div>
+                <div class="campo"><button id="btnId1" onclick="vistaEditarUsuario(1)">Editar</button></div>
+                <div class="campo"><button class="eliminar" onclick="eliminarUsuario(1)">Eliminar</button></div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

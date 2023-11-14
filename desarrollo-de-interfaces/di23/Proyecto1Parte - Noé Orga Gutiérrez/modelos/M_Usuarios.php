@@ -89,11 +89,35 @@ class M_Usuarios extends Modelo
         // MONTAR LA SQL
         $SQL = "INSERT INTO usuarios (nombre, apellido_1, apellido_2, sexo, fecha_Alta, mail, login, pass, activo) VALUES ('$intNombre', '$intApellido1', '$intApellido2', '$intSexo', NOW(), '$intEmail',  '$intLogin', '$intPass', '$intActivo' )";
 
+        $idUsuario = $this->DAO->insertar($SQL);
 
-        echo ($SQL);
-        $usuarios = $this->DAO->insertar($SQL);
-        echo ($usuarios);
-        return $usuarios;
+        return $idUsuario;
+    }
+    public function editarUsuario($filtros = array())
+    {
+        // COGER PARAMETROS
+        $modApellido1 = '';
+        $modApellido2 = '';
+        $modNombre = '';
+        $modActivo = '';
+        $modFecha = '';
+        $modId = '';
+        extract($filtros);
+        // MONTAR LA SQL
+        $SQL = "UPDATE usuarios SET apellido_1 = '$modApellido1', apellido_2 = '$modApellido2', nombre = '$modNombre', activo = '$modActivo' WHERE id_Usuario = $modId";
+
+
+        $filasModificadas = $this->DAO->actualizar($SQL);
+        return $filasModificadas;
+    }
+    public function eliminarUsuario($filtros = array())
+    {
+        // COGER PARAMETROS
+        $remId = '';
+        extract($filtros);
+        // MONTAR LA SQL
+        $SQL = "DELETE FROM usuarios WHERE id_Usuario = $remId";
+        return $filasModificadas = $this->DAO->borrar($SQL);
     }
 
 }

@@ -51,10 +51,28 @@ class C_Usuarios extends Controlador
     }
     public function introducirUsuario($filtros = array())
     {
-        $this->modelo->introducirUsuario($filtros);
+        $respuesta = '';
+        $idUsuario = $this->modelo->introducirUsuario($filtros);
+        if ($idUsuario > 0) {
+            $respuesta = "okay";
+        } else {
+            $respuesta = 'error';
+        }
 
+        echo $respuesta;
+    }
+    public function editarUsuario($filtros = array())
+    {
+        $respuesta = '';
+        $filasModificasdas = $this->modelo->editarUsuario($filtros);
 
+        echo $filasModificasdas;
+    }
+    public function eliminarUsuario($filtros = array())
+    {
 
+        $filasModificadas = $this->modelo->eliminarUsuario($filtros);
+        echo $filasModificadas;
     }
 
 }

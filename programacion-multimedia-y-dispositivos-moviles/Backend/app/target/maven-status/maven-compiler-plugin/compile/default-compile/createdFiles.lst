@@ -1,0 +1,17 @@
+MotorSQL\MotorPostgre.class
+Controller\Controller.class
+model\Venta.class
+model\Producto.class
+model\Favorito.class
+Action\FavoritoAction.class
+Action\ProductAction.class
+model\Direccion.class
+Action\DireccionAction.class
+Action\IAction.class
+DAO\ProductoDAO.class
+DAO\IDAO.class
+DAO\FavoritoDAO.class
+DAO\DireccionDAO.class
+Action\VentaAction.class
+DAO\VentaDAO.class
+MotorSQL\IMotor.class
