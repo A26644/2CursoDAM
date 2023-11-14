@@ -9,7 +9,15 @@ public class Usuario {
     private String email;
     private String pass;
     private String phone;
-    private int ventas;
+
+    public Usuario(String email, String pass) {
+        this.email = email;
+        this.pass = pass;
+    }
+
+    public Usuario() {
+
+    }
 
     public int getId() {
         return id;
@@ -65,14 +73,6 @@ public class Usuario {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public int getVentas() {
-        return ventas;
-    }
-
-    public void setVentas(int ventas) {
-        this.ventas = ventas;
     }
 
 }

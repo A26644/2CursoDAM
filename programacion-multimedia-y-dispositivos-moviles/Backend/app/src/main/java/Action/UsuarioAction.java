@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import DAO.UsuarioDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Usuario;
 
 public class UsuarioAction implements IAction {
     Gson gson = new Gson();
@@ -31,6 +32,9 @@ public class UsuarioAction implements IAction {
             case "ADD":
                 json = add(req, resp);
                 break;
+            case "LOGIN":
+                json = login(req, resp);
+                break;
         }
         return json;
     }
@@ -39,6 +43,14 @@ public class UsuarioAction implements IAction {
     public String find(HttpServletRequest req, HttpServletResponse resp) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'find'");
+    }
+
+    public String login(HttpServletRequest req, HttpServletResponse resp) {
+        String email = req.getParameter("EMAIL");
+        String password = req.getParameter("PASS");
+        Usuario usuario = new Usuario(email, password);
+        return gson.toJson(new UsuarioDAO().login(usuario));
+
     }
 
     @Override
