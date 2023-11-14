@@ -4,36 +4,45 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import MotorSQL.MotorPostgre;
-import model.Favorito;
+import model.Usuario;
 
-public class FavoritoDAO implements IDAO<Favorito> {
+public class UsuarioDAO implements IDAO<Usuario> {
     MotorPostgre motorPostgre = new MotorPostgre();
-    private final String FINDALL = "SELECT * FROM FAVORITO";
+
+    private final String FINDMOST = "SELECT U.ID, U.NOMBRE, COUNT(*) AS Ventas FROM VENTA V INNER JOIN USUARIO U ON V.USUARIOID = U.ID GROUP BY U.ID, U.NOMBRE ORDER BY COUNT(*) DESC LIMIT 10";
 
     @Override
-    public ArrayList<Favorito> find(int id) {
+    public ArrayList<Usuario> find(int id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'find'");
     }
 
     @Override
-    public ArrayList<Favorito> findAll() {
+    public ArrayList<Usuario> findAll() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    }
+
+    public ArrayList<Usuario> findMost() {
         try {
-            motorPostgre.preparePreparedStatement(FINDALL);
-            ArrayList<Favorito> lstFavorito = new ArrayList<>();
+            ArrayList<Usuario> lstUsuario = new ArrayList<>();
+            motorPostgre.preparePreparedStatement(FINDMOST);
             ResultSet rs = motorPostgre.getPpSt().executeQuery();
             while (rs.next()) {
-                Favorito favorito = new Favorito();
-                favorito.setId(rs.getInt("ID"));
-                favorito.setUsuarioId(rs.getInt("USUARIOID"));
-                favorito.setProductoId(rs.getInt("PRODUCTOID"));
-                lstFavorito.add(favorito);
+                Usuario usuario = new Usuario();
+                usuario.setId(rs.getInt("ID"));
+                usuario.setNombre(rs.getString("NOMBRE"));
+                usuario.setVentas(rs.getInt("VENTAS"));
+                lstUsuario.add(usuario);
+
             }
-            return lstFavorito;
+            return lstUsuario;
+
         } catch (Exception e) {
             System.out.println(e);
             return null;
         }
+
     }
 
     @Override
@@ -43,13 +52,13 @@ public class FavoritoDAO implements IDAO<Favorito> {
     }
 
     @Override
-    public int update(Favorito bean) {
+    public int update(Usuario bean) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
     @Override
-    public int add(Favorito bean) {
+    public int add(Usuario bean) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'add'");
     }

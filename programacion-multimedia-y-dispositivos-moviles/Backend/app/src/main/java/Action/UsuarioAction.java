@@ -2,11 +2,11 @@ package Action;
 
 import com.google.gson.Gson;
 
-import DAO.VentaDAO;
+import DAO.UsuarioDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class VentaAction implements IAction {
+public class UsuarioAction implements IAction {
     Gson gson = new Gson();
 
     @Override
@@ -18,6 +18,9 @@ public class VentaAction implements IAction {
                 break;
             case "FINDALL":
                 json = findAll(req, resp);
+                break;
+            case "FINDMOST":
+                json = findMost(req, resp);
                 break;
             case "UPDATE":
                 json = update(req, resp);
@@ -34,14 +37,19 @@ public class VentaAction implements IAction {
 
     @Override
     public String find(HttpServletRequest req, HttpServletResponse resp) {
-        String id = req.getParameter("USUARIOID");
-        int idInt = Integer.parseInt(id);
-        return gson.toJson(new VentaDAO().find(idInt));
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'find'");
     }
 
     @Override
     public String findAll(HttpServletRequest req, HttpServletResponse resp) {
-        return gson.toJson(new VentaDAO().findAll());
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    }
+
+    public String findMost(HttpServletRequest req, HttpServletResponse resp) {
+        return gson.toJson(new UsuarioDAO().findMost());
+
     }
 
     @Override

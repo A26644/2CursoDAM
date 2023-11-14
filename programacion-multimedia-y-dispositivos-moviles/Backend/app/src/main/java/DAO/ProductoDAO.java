@@ -1,6 +1,5 @@
 package DAO;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -9,8 +8,9 @@ import model.Producto;
 
 public class ProductoDAO implements IDAO<Producto> {
     MotorPostgre motorPostgre = new MotorPostgre();
-    PreparedStatement statement;
+
     private final String FINDALL = "SELECT * FROM PRODUCTO";
+    private final String ADD = "INSERT INTO PRODUCTO(USUARIOID, MARCA, PRECIO, FECHA, DESCRIPCION, NOMBRE, IMAGEN, ESTADO, COLOR) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     @Override
     public ArrayList<Producto> find(int id) {
@@ -59,8 +59,23 @@ public class ProductoDAO implements IDAO<Producto> {
 
     @Override
     public int add(Producto bean) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        try {
+            motorPostgre.preparePreparedStatement(ADD);
+            motorPostgre.getPpSt().setInt(1, bean.getUsuarioId());
+            motorPostgre.getPpSt().setString(2, bean.getMarca());
+            motorPostgre.getPpSt().setDouble(3, bean.getPrecio());
+            motorPostgre.getPpSt().setDate(4, bean.getFecha());
+            motorPostgre.getPpSt().setString(5, bean.getDescripcion());
+            motorPostgre.getPpSt().setString(6, bean.getNombre());
+            motorPostgre.getPpSt().setString(7, bean.getImagen());
+            motorPostgre.getPpSt().setString(8, bean.getEstado());
+            motorPostgre.getPpSt().setString(9, bean.getColor());
+            return motorPostgre.getPpSt().executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e);
+            return 0;
+        }
+
     }
 
 }

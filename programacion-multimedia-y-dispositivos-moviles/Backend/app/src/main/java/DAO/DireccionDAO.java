@@ -1,6 +1,5 @@
 package DAO;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -9,7 +8,7 @@ import model.Direccion;
 
 public class DireccionDAO implements IDAO<Direccion> {
     MotorPostgre motorPostgre = new MotorPostgre();
-    PreparedStatement statement;
+
     private final String FINDALL = "SELECT * FROM DIRECCION";
 
     @Override

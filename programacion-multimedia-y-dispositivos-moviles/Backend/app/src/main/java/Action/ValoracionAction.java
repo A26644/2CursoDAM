@@ -2,11 +2,12 @@ package Action;
 
 import com.google.gson.Gson;
 
-import DAO.VentaDAO;
+import DAO.ValoracionDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Valoracion;
 
-public class VentaAction implements IAction {
+public class ValoracionAction implements IAction {
     Gson gson = new Gson();
 
     @Override
@@ -34,14 +35,14 @@ public class VentaAction implements IAction {
 
     @Override
     public String find(HttpServletRequest req, HttpServletResponse resp) {
-        String id = req.getParameter("USUARIOID");
-        int idInt = Integer.parseInt(id);
-        return gson.toJson(new VentaDAO().find(idInt));
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'find'");
     }
 
     @Override
     public String findAll(HttpServletRequest req, HttpServletResponse resp) {
-        return gson.toJson(new VentaDAO().findAll());
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
     @Override
@@ -58,8 +59,22 @@ public class VentaAction implements IAction {
 
     @Override
     public String add(HttpServletRequest req, HttpServletResponse resp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        String estrellas = req.getParameter("ESTRELLA");
+        int estrellaInt = Integer.parseInt(estrellas);
+        String usuarioId = req.getParameter("USUARIOID");
+        int usuarioIdInt = Integer.parseInt(usuarioId);
+        String usuarioValoradoId = req.getParameter("USUARIOVALORADOID");
+        int usuarioValoradoIdInt = Integer.parseInt(usuarioValoradoId);
+        String comentario = req.getParameter("COMENTARIO");
+        Valoracion valoracion;
+        if (comentario.equals("")) {
+            valoracion = new Valoracion(usuarioIdInt, estrellaInt, comentario, usuarioValoradoIdInt);
+
+        } else {
+            valoracion = new Valoracion(usuarioIdInt, estrellaInt, usuarioValoradoIdInt);
+        }
+        return gson.toJson(new ValoracionDAO().add(valoracion));
+
     }
 
 }

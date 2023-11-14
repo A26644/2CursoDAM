@@ -5,6 +5,8 @@ import java.io.IOException;
 import Action.DireccionAction;
 import Action.FavoritoAction;
 import Action.ProductAction;
+import Action.ValoracionAction;
+import Action.UsuarioAction;
 import Action.VentaAction;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -41,6 +43,11 @@ public class Controller extends HttpServlet {
             case "VENTA":
                 json = new VentaAction().execute(actionSplitted[1], req, resp);
                 break;
+            case "USUARIO":
+                json = new UsuarioAction().execute(actionSplitted[1], req, resp);
+                break;
+            case "VALORACION":
+                json = new ValoracionAction().execute(actionSplitted[1], req, resp);
         }
         resp.getWriter().write(json);
     }

@@ -3,6 +3,7 @@ package model;
 import java.sql.Date;
 
 public class Producto {
+    // ATRIBUTOS
     private int id;
     private int usuarioId;
     private String marca;
@@ -14,6 +15,31 @@ public class Producto {
     private String estado;
     private String color;
 
+    // CONSTRUCTOR
+    public Producto() {
+    }
+
+    public Producto(int usuarioId, String marca, double precio, Date fecha, String descripcion, String nombre,
+            String imagen, String estado, String color) {
+        this.usuarioId = usuarioId;
+        this.marca = marca;
+        this.precio = precio;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.estado = estado;
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto [id=" + id + ", usuarioId=" + usuarioId + ", marca=" + marca + ", precio=" + precio
+                + ", fecha=" + fecha + ", descripcion=" + descripcion + ", nombre=" + nombre + ", imagen=" + imagen
+                + ", estado=" + estado + ", color=" + color + "]";
+    }
+
+    // METODOS
     public int getId() {
         return id;
     }
