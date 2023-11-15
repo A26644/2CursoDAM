@@ -26,18 +26,19 @@ public class ModelLogin implements ContractLogin.Model {
     // METODOS
     @Override
     public void loginAPI(Usuario usuario, onLoginUserListener onLoginUserListener) {
-    APIService apiService = RetrofitCliente.getClient("http://" + IP_BASE + "/app/").create(APIService.class);
+        System.out.println("Estoy en el model");
+    APIService apiService = RetrofitCliente.getClient("http://172.17.21.48:8080/app/").create(APIService.class);
 
-    Call<MyLoginData> call= apiService.getLogin("USUARIO.LOGIN");
+    Call<MyLoginData> call= apiService.getLogin("USUARIO.LOGIN", usuario.getEmail(), usuario.getPass());
     call.enqueue(new Callback<MyLoginData>() {
         @Override
         public void onResponse(Call<MyLoginData> call, Response<MyLoginData> response) {
             if (response.isSuccessful()){
-
+                System.out.println("Ha ido de locos");
+                System.out.println("Ha devuelto esto: " + response.body());
                 MyLoginData myLoginData = response.body();
-                String message = myLoginData.getMessage();
-                ArrayList<Usuario> lstUsuario = myLoginData.getLstUsuario();
-                onLoginUserListener.onFinished(lstUsuario.get(0));
+                Usuario usuario = new Usuario(myLoginData.getEmail(), myLoginData.getId());
+                onLoginUserListener.onFinished(usuario);
             }else{
                 System.out.println("Ha habido un error");
             }

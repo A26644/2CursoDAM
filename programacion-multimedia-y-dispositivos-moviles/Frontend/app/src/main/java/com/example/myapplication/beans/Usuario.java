@@ -1,6 +1,7 @@
 package com.example.myapplication.beans;
 
 public class Usuario {
+    // ATRIBUTOS
     private int id;
     private String nombre;
     private String apellido1;
@@ -8,7 +9,20 @@ public class Usuario {
     private String email;
     private String pass;
     private String phone;
-    private int ventas;
+
+    public Usuario(String email, int id) {
+        this.email = email;
+        this.id = id;
+    }
+
+    public Usuario() {
+
+    }
+
+    public Usuario(String email, String pass) {
+        this.email = email;
+        this.pass = pass;
+    }
 
     public int getId() {
         return id;
@@ -65,13 +79,4 @@ public class Usuario {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public int getVentas() {
-        return ventas;
-    }
-
-    public void setVentas(int ventas) {
-        this.ventas = ventas;
-    }
-
 }

@@ -1,6 +1,7 @@
 package com.example.myapplication.utils;
 
-import com.example.myapplication.login.data.MyData;
+import com.example.myapplication.beans.Usuario;
+import com.example.myapplication.login.data.MyLoginData;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,9 +14,11 @@ public interface APIService {
             "Content-Type: application/json"
     })
     @GET("Controller")
-    Call<MyData> getDataUsers(@Query("ACTION") String action);
+    Call<MyLoginData> getDataUsers(@Query("ACTION") String action);
 
     @GET("Controller")
-    Call<MyData> getDataMovies(@Query("ACTION") String action);
+    Call<MyLoginData> getDataMovies(@Query("ACTION") String action);
+    @GET("Controller")
+    Call<MyLoginData> getLogin(@Query("ACTION") String action, @Query("EMAIL") String nombre, @Query("PASS") String pass);
 
 }

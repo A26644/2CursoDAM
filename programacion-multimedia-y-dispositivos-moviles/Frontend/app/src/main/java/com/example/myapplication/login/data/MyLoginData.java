@@ -4,18 +4,32 @@ import com.example.myapplication.beans.Usuario;
 
 import java.util.ArrayList;
 
-public class MyData {
-    private String message;
-    private ArrayList<Usuario> lstUsuario;
+public class MyLoginData {
+    int id;
+    String email;
 
-    public String getMessage() {
-        return message;
-    }
-    public ArrayList<Usuario> getLstUsuario() {
-        return lstUsuario;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setLstUsuario(ArrayList<Usuario> lstUsuario) {
-        this.lstUsuario = lstUsuario;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "MyLoginData{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
