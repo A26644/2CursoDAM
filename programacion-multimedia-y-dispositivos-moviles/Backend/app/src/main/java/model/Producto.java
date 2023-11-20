@@ -4,10 +4,10 @@ import java.sql.Date;
 
 public class Producto {
     // ATRIBUTOS
-    private int id;
-    private int usuarioId;
+    private Integer id;
+    private Usuario usuario;
     private String marca;
-    private double precio;
+    private Double precio;
     private Date fecha;
     private String descripcion;
     private String nombre;
@@ -19,12 +19,38 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int usuarioId, String marca, double precio, Date fecha, String descripcion, String nombre,
+    public Producto(Integer id) {
+        this.id = id;
+    }
+
+    public Producto(String descripcion, String nombre, String imagen, String estado, String color) {
+        this.descripcion = descripcion;
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.estado = estado;
+        this.color = color;
+    }
+
+    public Producto(int id, Usuario usuario, String marca, double precio, Date fecha, String descripcion, String nombre,
             String imagen, String estado, String color) {
-        this.usuarioId = usuarioId;
+        this.id = id;
+        this.usuario = usuario;
         this.marca = marca;
         this.precio = precio;
-        this.fecha = fecha;
+
+        this.descripcion = descripcion;
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.estado = estado;
+        this.color = color;
+    }
+
+    public Producto(Usuario usuario, String marca, double precio, Date fecha, String descripcion, String nombre,
+            String imagen, String estado, String color) {
+        this.usuario = usuario;
+        this.marca = marca;
+        this.precio = precio;
+
         this.descripcion = descripcion;
         this.nombre = nombre;
         this.imagen = imagen;
@@ -34,7 +60,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto [id=" + id + ", usuarioId=" + usuarioId + ", marca=" + marca + ", precio=" + precio
+        return "Producto [id=" + id + ", usuarioId=" + usuario + ", marca=" + marca + ", precio=" + precio
                 + ", fecha=" + fecha + ", descripcion=" + descripcion + ", nombre=" + nombre + ", imagen=" + imagen
                 + ", estado=" + estado + ", color=" + color + "]";
     }
@@ -46,14 +72,6 @@ public class Producto {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
     }
 
     public String getMarca() {
@@ -70,14 +88,6 @@ public class Producto {
 
     public void setPrecio(double precio) {
         this.precio = precio;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public String getDescripcion() {
@@ -118,6 +128,22 @@ public class Producto {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
 }

@@ -2,7 +2,7 @@ package com.example.myapplication.beans;
 
 public class Usuario {
     // ATRIBUTOS
-    private int id;
+    private Integer id;
     private String nombre;
     private String apellido1;
     private String apellido2;
@@ -24,11 +24,11 @@ public class Usuario {
         this.pass = pass;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -78,5 +78,18 @@ public class Usuario {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", email='" + email + '\'' +
+                ", pass='" + pass + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

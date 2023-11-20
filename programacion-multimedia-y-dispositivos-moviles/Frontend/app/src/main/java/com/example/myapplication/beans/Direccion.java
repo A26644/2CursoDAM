@@ -1,10 +1,10 @@
 package com.example.myapplication.beans;
 
 public class Direccion {
-    private int id;
-    private int usuarioId;
+    private Integer id;
+    private Usuario usuario;
     private String direccion;
-    private int cp;
+    private Integer cp;
     private String ciudad;
     private String estado;
     private String pais;
@@ -17,12 +17,12 @@ public class Direccion {
         this.id = id;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public String getDireccion() {
@@ -63,5 +63,18 @@ public class Direccion {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "id=" + id +
+                ", usuario=" + usuario +
+                ", direccion='" + direccion + '\'' +
+                ", cp=" + cp +
+                ", ciudad='" + ciudad + '\'' +
+                ", estado='" + estado + '\'' +
+                ", pais='" + pais + '\'' +
+                '}';
     }
 }

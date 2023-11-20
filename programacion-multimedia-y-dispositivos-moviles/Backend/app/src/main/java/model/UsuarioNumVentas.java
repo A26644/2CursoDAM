@@ -1,9 +1,7 @@
-package model.modelSon;
+package model;
 
-import model.Usuario;
-
-public class UsuarioVenta extends Usuario {
-    private int numeroVentas;
+public class UsuarioNumVentas extends Usuario {
+    private Integer numeroVentas;
 
     public int getNumeroVentas() {
         return numeroVentas;

@@ -1,9 +1,9 @@
 package model;
 
 public class Favorito {
-    private int id;
-    private int usuarioId;
-    private int productoId;
+    private Integer id;
+    private Usuario usuario;
+    private Producto producto;
 
     public int getId() {
         return id;
@@ -13,20 +13,20 @@ public class Favorito {
         this.id = id;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public int getProductoId() {
-        return productoId;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setProductoId(int productoId) {
-        this.productoId = productoId;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
 }

@@ -5,86 +5,78 @@ import java.util.ArrayList;
 
 import MotorSQL.MotorPostgre;
 import model.Usuario;
-import model.modelSon.UsuarioVenta;
+import model.UsuarioNumVentas;
 
-public class UsuarioDAO implements IDAO<Usuario> {
+public class UsuarioDAO {
     MotorPostgre motorPostgre = new MotorPostgre();
-    private final String LOGIN = "SELECT * FROM USUARIO WHERE EMAIL = ? AND PASS = ?";
+    private final String LOGIN = "SELECT U.USUARIO_ID FROM USUARIO U WHERE U.EMAIL = ? AND U.PASS = ?";
+    private final String FIND = "SELECT * FROM USUARIO U WHERE U.USUARIO_ID = ?";
+    private final String FINDMOST = "SELECT U.USUARIO_ID, U.NOMBRE, U.APELLIDO1, U.APELLIDO2, U.EMAIL, count(*) \r\n" + //
+            "FROM USUARIO U \r\n" + //
+            "INNER JOIN PRODUCTO P ON U.USUARIO_ID = P.USUARIOID\r\n" + //
+            "GROUP BY U.USUARIO_ID \r\n" + //
+            "ORDER BY COUNT(*) \r\n" + //
+            "DESC LIMIT 10";
 
-    private final String FINDMOST = "SELECT U.ID, U.NOMBRE, COUNT(*) AS Ventas FROM VENTA V INNER JOIN USUARIO U ON V.USUARIOID = U.ID GROUP BY U.ID, U.NOMBRE ORDER BY COUNT(*) DESC LIMIT 10";
-
-    @Override
-    public ArrayList<Usuario> find(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'find'");
+    public Usuario find(int userId) {
+        Usuario usuario = new Usuario();
+        try {
+            motorPostgre.preparePreparedStatement(FIND);
+            motorPostgre.getPpSt().setInt(1, userId);
+            ResultSet rs = motorPostgre.getPpSt().executeQuery();
+            if (rs.next()) {
+                usuario.setId(rs.getInt("USUARIO_ID"));
+                usuario.setNombre(rs.getString("NOMBRE"));
+                usuario.setApellido1(rs.getString("APELLIDO1"));
+                usuario.setApellido2(rs.getString("APELLIDO2"));
+                usuario.setEmail(rs.getString("EMAIL"));
+                usuario.setPass(rs.getString("PASS"));
+                usuario.setPhone(rs.getString("PHONE"));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return usuario;
     }
 
-    public ArrayList<Usuario> login(Usuario bean) {
+    public Usuario login(Usuario bean) {
+        Usuario usuario = new Usuario();
         try {
-            ArrayList<Usuario> lstUsuario = new ArrayList<>();
             motorPostgre.preparePreparedStatement(LOGIN);
             motorPostgre.getPpSt().setString(1, bean.getEmail());
             motorPostgre.getPpSt().setString(2, bean.getPass());
             ResultSet rs = motorPostgre.getPpSt().executeQuery();
-            while (rs.next()) {
-                Usuario usuario = new Usuario();
-                usuario.setEmail(rs.getString("EMAIL"));
-                usuario.setPass(rs.getString("PASS"));
-                lstUsuario.add(usuario);
+            if (rs.next()) {
+                usuario.setId(rs.getInt("USUARIO_ID"));
             }
-            return lstUsuario;
-
         } catch (Exception e) {
             System.out.println(e);
-            return null;
+
         }
+        return usuario;
 
     }
 
-    @Override
-    public ArrayList<Usuario> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
-    }
-
-    public ArrayList<UsuarioVenta> findMost() {
+    public ArrayList<UsuarioNumVentas> findMost() {
+        ArrayList<UsuarioNumVentas> lstUsuario = new ArrayList<>();
         try {
-            ArrayList<UsuarioVenta> lstUsuario = new ArrayList<>();
             motorPostgre.preparePreparedStatement(FINDMOST);
             ResultSet rs = motorPostgre.getPpSt().executeQuery();
             while (rs.next()) {
-                UsuarioVenta usuarioVenta = new UsuarioVenta();
-                usuarioVenta.setId(rs.getInt("ID"));
+                UsuarioNumVentas usuarioVenta = new UsuarioNumVentas();
+                usuarioVenta.setId(rs.getInt("USUARIO_ID"));
                 usuarioVenta.setNombre(rs.getString("NOMBRE"));
-                usuarioVenta.setNumeroVentas(rs.getInt("VENTAS"));
+                usuarioVenta.setApellido1(rs.getString("APELLIDO1"));
+                usuarioVenta.setApellido2(rs.getString("APELLIDO2"));
+                usuarioVenta.setNumeroVentas(rs.getInt("COUNT"));
+                usuarioVenta.setEmail(rs.getString("EMAIL"));
                 lstUsuario.add(usuarioVenta);
-
             }
-            return lstUsuario;
-
         } catch (Exception e) {
             System.out.println(e);
-            return null;
         }
+        return lstUsuario;
 
-    }
-
-    @Override
-    public int delete(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
-    }
-
-    @Override
-    public int update(Usuario bean) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
-
-    @Override
-    public int add(Usuario bean) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 
 }

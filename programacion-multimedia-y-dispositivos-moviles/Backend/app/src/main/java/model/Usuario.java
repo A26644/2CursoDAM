@@ -2,7 +2,7 @@ package model;
 
 public class Usuario {
     // ATRIBUTOS
-    private int id;
+    private Integer id;
     private String nombre;
     private String apellido1;
     private String apellido2;
@@ -15,8 +15,22 @@ public class Usuario {
         this.pass = pass;
     }
 
+    public Usuario(int id, String nombre, String apellido1, String apellido2, String email, String pass, String phone) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.email = email;
+        this.pass = pass;
+        this.phone = phone;
+    }
+
     public Usuario() {
 
+    }
+
+    public Usuario(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -73,6 +87,12 @@ public class Usuario {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
+                + ", email=" + email + ", pass=" + pass + ", phone=" + phone + "]";
     }
 
 }

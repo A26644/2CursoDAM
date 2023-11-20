@@ -2,6 +2,7 @@ package com.example.myapplication.login.presenter;
 
 import com.example.myapplication.beans.Usuario;
 import com.example.myapplication.login.ContractLogin;
+import com.example.myapplication.login.data.MyLoginData;
 import com.example.myapplication.login.model.ModelLogin;
 
 public class PresenterLogin implements ContractLogin.Presenter, ContractLogin.Model.onLoginUserListener {
@@ -22,22 +23,18 @@ public class PresenterLogin implements ContractLogin.Presenter, ContractLogin.Mo
 
     @Override
     public void login(Usuario usuario) {
-        System.out.println("Estoy en la view");
        model.loginAPI(usuario, this);
-
-
-
 
     }
 
     @Override
-    public void onFinished(Usuario usuario) {
-        view.successLogin(usuario);
+    public void onFinished(MyLoginData myLoginData) {
+        view.successLogin(myLoginData);
 
     }
 
     @Override
     public void onFailure(String err) {
-        System.out.println("Ha fallado en el presenter");
+        view.failureLogin(err);
     }
 }

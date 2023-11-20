@@ -4,11 +4,9 @@ import java.sql.Date;
 
 public class Producto {
     // ATRIBUTOS
-    private int id;
-    private int usuarioId;
+    private Integer usuarioId;
     private String marca;
-    private double precio;
-    private Date fecha;
+    private Double precio;
     private String descripcion;
     private String nombre;
     private String imagen;
@@ -19,40 +17,21 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int usuarioId, String marca, double precio, Date fecha, String descripcion, String nombre,
-                    String imagen, String estado, String color) {
+    public Producto(Integer usuarioId, String marca, Double precio, String descripcion, String nombre, String estado, String color) {
         this.usuarioId = usuarioId;
         this.marca = marca;
         this.precio = precio;
-        this.fecha = fecha;
         this.descripcion = descripcion;
         this.nombre = nombre;
-        this.imagen = imagen;
         this.estado = estado;
         this.color = color;
     }
 
-    @Override
-    public String toString() {
-        return "Producto [id=" + id + ", usuarioId=" + usuarioId + ", marca=" + marca + ", precio=" + precio
-                + ", fecha=" + fecha + ", descripcion=" + descripcion + ", nombre=" + nombre + ", imagen=" + imagen
-                + ", estado=" + estado + ", color=" + color + "]";
-    }
-
-    // METODOS
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUsuarioId() {
+    public Integer getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(int usuarioId) {
+    public void setUsuarioId(Integer usuarioId) {
         this.usuarioId = usuarioId;
     }
 
@@ -64,20 +43,12 @@ public class Producto {
         this.marca = marca;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public String getDescripcion() {
@@ -119,4 +90,22 @@ public class Producto {
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "usuarioId=" + usuarioId +
+                ", marca='" + marca + '\'' +
+                ", precio=" + precio +
+                ", descripcion='" + descripcion + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", estado='" + estado + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
+    // METODOS
+
+
 }

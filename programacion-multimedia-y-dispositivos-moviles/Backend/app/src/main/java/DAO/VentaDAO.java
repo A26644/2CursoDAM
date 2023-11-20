@@ -5,73 +5,43 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import MotorSQL.MotorPostgre;
+
+import model.Producto;
+
 import model.Venta;
 
-public class VentaDAO implements IDAO<Venta> {
+public class VentaDAO {
     MotorPostgre motorPostgre = new MotorPostgre();
     PreparedStatement statement;
-    private final String FINDALL = "SELECT * FROM VENTA";
-    private final String FIND = "SELECT * FROM VENTA WHERE USUARIOID = ?";
+    private final String FINDONSALE = "SELECT V.VENTA_ID, P.PRODUCTO_ID, P.MARCA, P.PRECIO, P.DESCRIPCION, P.NOMBRE, P.IMAGEN, P.ESTADO, P.COLOR FROM VENTA V INNER JOIN PRODUCTO P ON V.VENTA_PRODUCTOID = P.PRODUCTO_ID WHERE V.VENTA_VENDEDORID = ?";
 
-    @Override
-    public ArrayList<Venta> find(int id) {
+    public ArrayList<Venta> findOnSale(int id) {
+
+        ArrayList<Venta> lstVenta = new ArrayList<>();
         try {
-            motorPostgre.preparePreparedStatement(FIND);
+            motorPostgre.preparePreparedStatement(FINDONSALE);
             motorPostgre.getPpSt().setInt(1, id);
-            ArrayList<Venta> lstVenta = new ArrayList<>();
             ResultSet rs = motorPostgre.getPpSt().executeQuery();
             while (rs.next()) {
                 Venta venta = new Venta();
-                venta.setId(rs.getInt("ID"));
-                venta.setUsuarioId(rs.getInt("USUARIOID"));
-                venta.setDireccionId(rs.getInt("DIRECCIONID"));
-                venta.setFecha(rs.getDate("FECHA"));
+                // RELLENAR VENTA
+                venta.setVentaId(rs.getInt("VENTA_ID"));
+                // RELLENAR PRODUCTO
+                venta.setProducto(new Producto());
+                venta.getProducto().setId(rs.getInt("PRODUCTO_ID"));
+                venta.getProducto().setMarca(rs.getString("MARCA"));
+                venta.getProducto().setPrecio(rs.getDouble("PRECIO"));
+                venta.getProducto().setDescripcion(rs.getString("DESCRIPCION"));
+                venta.getProducto().setNombre(rs.getString("NOMBRE"));
+                venta.getProducto().setImagen(rs.getString("IMAGEN"));
+                venta.getProducto().setEstado(rs.getString("ESTADO"));
+                venta.getProducto().setColor(rs.getString("COLOR"));
                 lstVenta.add(venta);
             }
-            return lstVenta;
         } catch (Exception e) {
             System.out.println(e);
-            return null;
         }
-    }
-
-    @Override
-    public ArrayList<Venta> findAll() {
-        try {
-            motorPostgre.preparePreparedStatement(FINDALL);
-            ArrayList<Venta> lstVenta = new ArrayList<>();
-            ResultSet rs = motorPostgre.getPpSt().executeQuery();
-            while (rs.next()) {
-                Venta venta = new Venta();
-                venta.setId(rs.getInt("ID"));
-                venta.setUsuarioId(rs.getInt("USUARIOID"));
-                venta.setDireccionId(rs.getInt("DIRECCIONID"));
-                venta.setFecha(rs.getDate("FECHA"));
-                lstVenta.add(venta);
-            }
-            return lstVenta;
-        } catch (Exception e) {
-            System.out.println(e);
-            return null;
-        }
-    }
-
-    @Override
-    public int delete(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
-    }
-
-    @Override
-    public int update(Venta bean) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
-
-    @Override
-    public int add(Venta bean) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        return lstVenta;
     }
 
 }

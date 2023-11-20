@@ -10,22 +10,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.window.SplashScreen;
 
 import com.example.myapplication.R;
 import com.example.myapplication.beans.Usuario;
 import com.example.myapplication.loggedScreen.view.LoggedScreenActivity;
 import com.example.myapplication.login.ContractLogin;
+import com.example.myapplication.login.data.MyLoginData;
 import com.example.myapplication.login.presenter.PresenterLogin;
 
-public class ViewLogin extends AppCompatActivity implements ContractLogin.View {
+public class ViewLoginActivity extends AppCompatActivity implements ContractLogin.View {
     // ATRIBUTOS
     private PresenterLogin presenterLogin = new PresenterLogin(this);
     // PATRON SINGLETON
-    private static ViewLogin mainActivity = null;
+    private static ViewLoginActivity mainActivity = null;
 
     // METODOS
-    public static ViewLogin getInstance() {
+    public static ViewLoginActivity getInstance() {
         return mainActivity;
     }
 
@@ -55,14 +55,15 @@ public class ViewLogin extends AppCompatActivity implements ContractLogin.View {
 
 
     @Override
-    public void successLogin(Usuario usuario) {
-        Intent intent = new Intent(this, LoggedScreenActivity.class);
+    public void successLogin(MyLoginData myLoginData) {
+        Intent intent = new Intent(ViewLoginActivity.this, LoggedScreenActivity.class);
+        intent.putExtra("id", myLoginData.getId());
         startActivity(intent);
 
     }
 
     @Override
     public void failureLogin(String err) {
-        Toast.makeText(ViewLogin.this, err, Toast.LENGTH_SHORT).show();
+        Toast.makeText(ViewLoginActivity.this, err, Toast.LENGTH_SHORT).show();
     }
 }

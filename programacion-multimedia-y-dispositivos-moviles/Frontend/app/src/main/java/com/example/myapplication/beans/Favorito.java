@@ -1,9 +1,9 @@
 package com.example.myapplication.beans;
 
 public class Favorito {
-    private int id;
-    private int usuarioId;
-    private int productoId;
+    private Integer id;
+    private Integer usuarioId;
+    private Integer productoId;
 
     public int getId() {
         return id;

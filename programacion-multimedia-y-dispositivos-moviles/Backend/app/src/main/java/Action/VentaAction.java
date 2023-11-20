@@ -1,65 +1,30 @@
 package Action;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import DAO.VentaDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class VentaAction implements IAction {
-    Gson gson = new Gson();
+public class VentaAction {
+    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
-    @Override
     public String execute(String action, HttpServletRequest req, HttpServletResponse resp) {
         String json = "";
         switch (action) {
-            case "FIND":
-                json = find(req, resp);
-                break;
-            case "FINDALL":
-                json = findAll(req, resp);
-                break;
-            case "UPDATE":
-                json = update(req, resp);
-                break;
-            case "DELETE":
-                json = delete(req, resp);
-                break;
-            case "ADD":
-                json = add(req, resp);
+            case "FINDONSALE":
+                json = findOnSale(req, resp);
                 break;
         }
         return json;
     }
 
-    @Override
-    public String find(HttpServletRequest req, HttpServletResponse resp) {
+    public String findOnSale(HttpServletRequest req, HttpServletResponse resp) {
         String id = req.getParameter("USUARIOID");
-        int idInt = Integer.parseInt(id);
-        return gson.toJson(new VentaDAO().find(idInt));
-    }
+        Integer idInt = Integer.parseInt(id);
+        return gson.toJson(new VentaDAO().findOnSale(idInt));
 
-    @Override
-    public String findAll(HttpServletRequest req, HttpServletResponse resp) {
-        return gson.toJson(new VentaDAO().findAll());
-    }
-
-    @Override
-    public String delete(HttpServletRequest req, HttpServletResponse resp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
-    }
-
-    @Override
-    public String update(HttpServletRequest req, HttpServletResponse resp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
-
-    @Override
-    public String add(HttpServletRequest req, HttpServletResponse resp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 
 }

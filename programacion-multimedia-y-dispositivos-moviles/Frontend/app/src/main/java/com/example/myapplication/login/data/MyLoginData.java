@@ -5,19 +5,8 @@ import com.example.myapplication.beans.Usuario;
 import java.util.ArrayList;
 
 public class MyLoginData {
-    int id;
-    String email;
-
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getId() {
+    Integer id;
+    public Integer getId() {
         return id;
     }
 
@@ -29,7 +18,6 @@ public class MyLoginData {
     public String toString() {
         return "MyLoginData{" +
                 "id=" + id +
-                ", email='" + email + '\'' +
                 '}';
     }
 }

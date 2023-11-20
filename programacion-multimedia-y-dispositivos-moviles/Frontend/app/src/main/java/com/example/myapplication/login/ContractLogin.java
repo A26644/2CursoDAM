@@ -1,10 +1,11 @@
 package com.example.myapplication.login;
 
 import com.example.myapplication.beans.Usuario;
+import com.example.myapplication.login.data.MyLoginData;
 
 public interface ContractLogin {
     public interface View {
-        public void successLogin(Usuario usuario);
+        public void successLogin(MyLoginData myLoginData);
 
         public void failureLogin(String err);
 
@@ -17,7 +18,7 @@ public interface ContractLogin {
 
     public interface Model {
         public interface onLoginUserListener {
-            public void onFinished(Usuario usuario);
+            public void onFinished(MyLoginData myLoginData);
 
             public void onFailure(String err);
         }

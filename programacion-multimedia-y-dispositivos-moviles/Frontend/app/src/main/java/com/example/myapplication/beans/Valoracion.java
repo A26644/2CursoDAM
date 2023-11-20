@@ -1,11 +1,11 @@
 package com.example.myapplication.beans;
 
 public class Valoracion {
-    private int id;
-    private int usuarioId;
-    private int estrellas;
+    private Integer id;
+    private Integer usuarioId;
+    private Integer estrellas;
     private String comentario;
-    private int usuarioValoradoId;
+    private Integer usuarioValoradoId;
 
     public int getId() {
         return id;

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@android:color/transparent"
-    tools:context=".login.view.ViewLogin">
+    tools:context=".login.view.ViewLoginActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -64,7 +64,7 @@
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:inputType="text"
-        android:text="Contraseña"
+        android:hint=" Contraseña"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:inputType="text"
-        android:text=" Email"
+        android:hint=" Email"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toTopOf="@+id/LoginPass"
         app:layout_constraintEnd_toEndOf="parent"

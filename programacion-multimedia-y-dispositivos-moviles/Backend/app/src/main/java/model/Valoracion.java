@@ -1,11 +1,11 @@
 package model;
 
 public class Valoracion {
-    private int id;
-    private int usuarioId;
+    private Integer id;
+    private Usuario usuario;
     private int estrellas;
     private String comentario;
-    private int usuarioValoradoId;
+    private Usuario usuarioValorado;
 
     public int getId() {
         return id;
@@ -15,12 +15,12 @@ public class Valoracion {
         this.id = id;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public int getEstrellas() {
@@ -39,25 +39,12 @@ public class Valoracion {
         this.comentario = comentario;
     }
 
-    public Valoracion(int usuarioId, int estrellas, String comentario, int usuarioValoradoId) {
-        this.usuarioId = usuarioId;
-        this.estrellas = estrellas;
-        this.comentario = comentario;
-        this.usuarioValoradoId = usuarioValoradoId;
+    public Usuario getUsuarioValorado() {
+        return usuarioValorado;
     }
 
-    public Valoracion(int usuarioId, int estrellas, int usuarioValoradoId) {
-        this.usuarioId = usuarioId;
-        this.estrellas = estrellas;
-        this.usuarioValoradoId = usuarioValoradoId;
-    }
-
-    public int getUsuarioValoradoId() {
-        return usuarioValoradoId;
-    }
-
-    public void setUsuarioValoradoId(int usuarioValoradoId) {
-        this.usuarioValoradoId = usuarioValoradoId;
+    public void setUsuarioValorado(Usuario usuarioValorado) {
+        this.usuarioValorado = usuarioValorado;
     }
 
 }
