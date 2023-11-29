@@ -1,33 +1,35 @@
 
 
-function cargarUnScript(url){
+function cargarUnScript(url) {
     let script = document.createElement('script');
     script.src = url;
     document.head.appendChild(script);
 }
 
-function getVistaMenuSeleccionado(controlador, metodo){
-    let opciones={method: "GET"};
-    let parametros= "controlador="+controlador+"&metodo="+metodo;
+function getVistaMenuSeleccionado(controlador, metodo) {
+    console.log("Has entrado a la funcion con este metodo: " + metodo)
+    let opciones = { method: "GET" };
 
-    fetch("C_Ajax.php?"+parametros, opciones)
+    let parametros = "controlador=" + controlador + "&metodo=" + metodo;
+
+    fetch("C_Ajax.php?" + parametros, opciones)
         .then(res => {
-            if(res.ok){
+            if (res.ok) {
                 console.log('respuesta ok');
                 return res.text();
             }
         })
-        .then(vista=>{
-            document.getElementById("secContenidoPagina").innerHTML=vista;
-            cargarUnScript('js/'+controlador+'.js');
+        .then(vista => {
+            document.getElementById("secContenidoPagina").innerHTML = vista;
+            cargarUnScript('js/' + controlador + '.js');
         })
-        .catch(err=>{
+        .catch(err => {
             console.log("Error al realizar la petición", err.message);
         });
 
 }
 
-function cargarScript(fileName){
+function cargarScript(fileName) {
     let route = `js/${fileName}.js`
 
     let script = document.createElement('script')
@@ -35,4 +37,3 @@ function cargarScript(fileName){
     document.head.appendChild(script)
 
 }
-

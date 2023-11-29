@@ -17,7 +17,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] != '') {
             <link rel="stylesheet" href="css/index.css">
             <link rel="stylesheet" href="css/menu.css">
             <link rel="stylesheet" href="css/vistaUsuarios.css">
-            <script src="js/app.js"></script>
+
         </head>
 
         <body>
@@ -70,7 +70,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] != '') {
                                         aria-expanded="false">CRUD's</a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item"
-                                                onclick="getVistaMenuSeleccionado('Usuarios','getVistaUsuarios')">Buscar
+                                                onclick="getVistaMenuSeleccionado(`Usuarios`,`getVistaUsuarios`)">Buscar
                                                 Usuarios</a>
                                         </li>
                                         <li><a class="dropdown-item"
@@ -87,6 +87,8 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] != '') {
             <section id="secContenidoPagina" class="container-fluid">
             </section>
             <script src="librerias/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+            <script src="js/app.js"></script>
+            <script src="js/Usuarios.js"></script>
         </body>
 
     </html>

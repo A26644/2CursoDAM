@@ -27,6 +27,10 @@ public class Direccion {
 
     }
 
+    public Direccion(Integer id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -85,7 +89,8 @@ public class Direccion {
 
     @Override
     public String toString() {
-        return "Direccion [id=" + id + ", usuario=" + usuario + ", direccion=" + direccion + ", cp=" + cp + ", ciudad="
+        return "Direccion [id=" + id + ", usuario=" + usuario.toString() + ", direccion=" + direccion + ", cp=" + cp
+                + ", ciudad="
                 + ciudad + ", estado=" + estado + ", pais=" + pais + "]";
     }
 

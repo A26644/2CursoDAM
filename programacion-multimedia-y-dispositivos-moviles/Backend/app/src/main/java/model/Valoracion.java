@@ -3,9 +3,23 @@ package model;
 public class Valoracion {
     private Integer id;
     private Usuario usuario;
-    private int estrellas;
+    private Integer estrellas;
     private String comentario;
     private Usuario usuarioValorado;
+    private Producto producto;
+
+    public Valoracion(Usuario usuario, Integer estrellas, String comentario, Usuario usuarioValorado,
+            Producto producto) {
+
+        this.usuario = usuario;
+        this.estrellas = estrellas;
+        this.comentario = comentario;
+        this.usuarioValorado = usuarioValorado;
+        this.producto = producto;
+    }
+
+    public Valoracion() {
+    }
 
     public int getId() {
         return id;
@@ -45,6 +59,14 @@ public class Valoracion {
 
     public void setUsuarioValorado(Usuario usuarioValorado) {
         this.usuarioValorado = usuarioValorado;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
 }

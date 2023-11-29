@@ -17,7 +17,8 @@ import java.util.ArrayList;
 public class OnSaleDataAdapter extends RecyclerView.Adapter<OnSaleDataAdapter.ViewHolder> {
     private ArrayList<OnLoadSaleData> lstSales;
     private LayoutInflater inflater;
-    public OnSaleDataAdapter(Context context, ArrayList<OnLoadSaleData> lstSales){
+
+    public OnSaleDataAdapter(Context context, ArrayList<OnLoadSaleData> lstSales) {
         this.lstSales = lstSales;
         this.inflater = LayoutInflater.from(context);
     }
@@ -25,7 +26,7 @@ public class OnSaleDataAdapter extends RecyclerView.Adapter<OnSaleDataAdapter.Vi
     @NonNull
     @Override
     public OnSaleDataAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.sale_data_card, parent, false);
+        View view = inflater.inflate(R.layout.own_product_card, parent, false);
         return new ViewHolder(view);
     }
 
@@ -36,10 +37,9 @@ public class OnSaleDataAdapter extends RecyclerView.Adapter<OnSaleDataAdapter.Vi
         holder.productName.setText(sale.getNombre());
         holder.productBrand.setText(sale.getMarca());
         holder.productPrice.setText(String.valueOf(sale.getPrecio()));
-        holder.productDesc.setText(sale.getDescripcion());
         holder.productState.setText(sale.getEstado());
-        holder.productColor.setText(sale.getColor());
-
+        holder.productDesc = sale.getDescripcion();
+        holder.productColor = sale.getColor();
     }
 
     @Override
@@ -51,19 +51,17 @@ public class OnSaleDataAdapter extends RecyclerView.Adapter<OnSaleDataAdapter.Vi
         TextView productName;
         TextView productBrand;
         TextView productPrice;
-        TextView productDesc;
+        String productDesc = "";
         TextView productState;
-        TextView productColor;
+        String productColor = "";
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            productName = itemView.findViewById(R.id.Username);
-            productBrand = itemView.findViewById(R.id.productBrand);
+            productName = itemView.findViewById(R.id.productName);
             productPrice = itemView.findViewById(R.id.productPrice);
-            productDesc = itemView.findViewById(R.id.userLast1);
-            productState = itemView.findViewById(R.id.saleNumber);
-            productColor = itemView.findViewById(R.id.userEmail);
+            productState = itemView.findViewById(R.id.productState);
+            productBrand = itemView.findViewById(R.id.productBrand);
 
 
         }

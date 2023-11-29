@@ -1,6 +1,8 @@
 package com.example.myapplication.beans;
 
-public class Direccion {
+import java.io.Serializable;
+
+public class Direccion implements Serializable {
     private Integer id;
     private Usuario usuario;
     private String direccion;
@@ -8,7 +10,12 @@ public class Direccion {
     private String ciudad;
     private String estado;
     private String pais;
+    public Direccion(Integer id){
+        this.id = id;
+    }
+    public Direccion(){
 
+    }
     public int getId() {
         return id;
     }

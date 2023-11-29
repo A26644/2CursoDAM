@@ -1,10 +1,12 @@
 package com.example.myapplication.beans;
 
-import java.sql.Date;
+import android.text.Editable;
 
-public class Producto {
+import java.io.Serializable;
+
+public class Producto implements Serializable {
     // ATRIBUTOS
-    private Integer usuarioId;
+    private Integer id;
     private String marca;
     private Double precio;
     private String descripcion;
@@ -16,9 +18,12 @@ public class Producto {
     // CONSTRUCTOR
     public Producto() {
     }
+    public Producto(Integer id) {
+        this.id = id;
+    }
 
     public Producto(Integer usuarioId, String marca, Double precio, String descripcion, String nombre, String estado, String color) {
-        this.usuarioId = usuarioId;
+        this.id = usuarioId;
         this.marca = marca;
         this.precio = precio;
         this.descripcion = descripcion;
@@ -28,11 +33,11 @@ public class Producto {
     }
 
     public Integer getUsuarioId() {
-        return usuarioId;
+        return id;
     }
 
     public void setUsuarioId(Integer usuarioId) {
-        this.usuarioId = usuarioId;
+        this.id = usuarioId;
     }
 
     public String getMarca() {
@@ -94,7 +99,7 @@ public class Producto {
     @Override
     public String toString() {
         return "Producto{" +
-                "usuarioId=" + usuarioId +
+                "id=" + id +
                 ", marca='" + marca + '\'' +
                 ", precio=" + precio +
                 ", descripcion='" + descripcion + '\'' +

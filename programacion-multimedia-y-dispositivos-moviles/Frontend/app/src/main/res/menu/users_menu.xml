@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/top10Sales"
+        android:title="Con mas ventas"
+        />
+    <item
+        android:id="@+id/top10Rated"
+        android:title="Con mejores valoraciones"
+        />
+    <item
+        android:id="@+id/myBoughtProducts"
+        android:title="Ver mis productos comprados"/>
+</menu>

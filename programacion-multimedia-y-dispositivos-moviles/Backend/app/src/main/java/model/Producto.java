@@ -58,6 +58,10 @@ public class Producto {
         this.color = color;
     }
 
+    public Producto(String nombre) {
+        this.nombre = nombre;
+    }
+
     @Override
     public String toString() {
         return "Producto [id=" + id + ", usuarioId=" + usuario + ", marca=" + marca + ", precio=" + precio

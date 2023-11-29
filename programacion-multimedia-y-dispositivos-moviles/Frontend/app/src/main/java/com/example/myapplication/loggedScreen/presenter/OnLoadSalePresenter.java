@@ -2,12 +2,15 @@ package com.example.myapplication.loggedScreen.presenter;
 
 import com.example.myapplication.beans.Producto;
 import com.example.myapplication.loggedScreen.ContractLoggedScreen;
+import com.example.myapplication.loggedScreen.data.CategoriaData;
 import com.example.myapplication.loggedScreen.data.OnLoadSaleData;
 import com.example.myapplication.loggedScreen.model.OnLoadSaleModel;
 
+import org.jetbrains.annotations.Contract;
+
 import java.util.ArrayList;
 
-public class OnLoadSalePresenter implements ContractLoggedScreen.Presenter, ContractLoggedScreen.Model.loadOnSaleListener {
+public class OnLoadSalePresenter implements ContractLoggedScreen.Presenter, ContractLoggedScreen.Model.loadOnSaleListener{
     ContractLoggedScreen.View view;
     ContractLoggedScreen.Model model;
     public OnLoadSalePresenter(ContractLoggedScreen.View view ){
@@ -20,6 +23,8 @@ public class OnLoadSalePresenter implements ContractLoggedScreen.Presenter, Cont
 
     }
 
+
+
     @Override
     public void onFinished(ArrayList<OnLoadSaleData> lstSales) {
     view.successLoadOnSale(lstSales);
@@ -30,4 +35,6 @@ public class OnLoadSalePresenter implements ContractLoggedScreen.Presenter, Cont
         view.failureLoadOnSale(err);
 
     }
+
+
 }

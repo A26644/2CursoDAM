@@ -8,12 +8,21 @@ public class Venta {
     private Usuario comprador;
     private Direccion direccion;
     private Producto producto;
-    private Date fechaSubida;
     private Date fechaVenta;
     private Boolean vendido;
 
     public int getVentaId() {
         return ventaId;
+    }
+
+    public Venta() {
+    }
+
+    public Venta(Usuario vendedor, Usuario comprador, Direccion direccion, Producto producto) {
+        this.vendedor = vendedor;
+        this.comprador = comprador;
+        this.direccion = direccion;
+        this.producto = producto;
     }
 
     public void setVentaId(int ventaId) {
@@ -50,14 +59,6 @@ public class Venta {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
-    }
-
-    public Date getFechaSubida() {
-        return fechaSubida;
-    }
-
-    public void setFechaSubida(Date fechaSubida) {
-        this.fechaSubida = fechaSubida;
     }
 
     public Date getFechaVenta() {

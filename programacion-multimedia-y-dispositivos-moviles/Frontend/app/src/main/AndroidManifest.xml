@@ -16,6 +16,39 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".RateProduct.View.RateProduct"
+            android:exported="false" />
+        <activity
+            android:name=".BoughtProducts.View.MyBoughtProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyProduct.View.SelectAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetail.View.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAll.View.ViewAllActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TopRatedUsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".utils.ToolbarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topRated.View.TopRatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".choosingScreen.ChooseUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".choosingScreen.ChooseProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addProduct.view.AddProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".top.view.TopViewActivity"
             android:exported="false" />
         <activity
@@ -26,6 +59,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -103,12 +103,25 @@ class M_Usuarios extends Modelo
         $modFecha = '';
         $modId = '';
         extract($filtros);
+        if ($modActivo == 'on') {
+            $modActivo = 'S';
+        } else {
+            $modActivo = 'N';
+        }
         // MONTAR LA SQL
         $SQL = "UPDATE usuarios SET apellido_1 = '$modApellido1', apellido_2 = '$modApellido2', nombre = '$modNombre', activo = '$modActivo' WHERE id_Usuario = $modId";
 
 
         $filasModificadas = $this->DAO->actualizar($SQL);
         return $filasModificadas;
+    }
+    public function cargarValoresUsuario($filtros = array())
+    {
+        $editId = '';
+        extract($filtros);
+        // MONTAR LA SQL
+        $SQL = "SELECT * FROM usuarios WHERE id_Usuario = $editId";
+        return $this->DAO->consultar($SQL);
     }
     public function eliminarUsuario($filtros = array())
     {
@@ -117,7 +130,7 @@ class M_Usuarios extends Modelo
         extract($filtros);
         // MONTAR LA SQL
         $SQL = "DELETE FROM usuarios WHERE id_Usuario = $remId";
-        return $filasModificadas = $this->DAO->borrar($SQL);
+        return $this->DAO->borrar($SQL);
     }
 
 }

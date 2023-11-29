@@ -25,12 +25,12 @@ public class Usuario {
         this.phone = phone;
     }
 
-    public Usuario() {
-
+    public Usuario(Integer id) {
+        this.id = id;
     }
 
-    public Usuario(int id) {
-        this.id = id;
+    public Usuario() {
+
     }
 
     public int getId() {

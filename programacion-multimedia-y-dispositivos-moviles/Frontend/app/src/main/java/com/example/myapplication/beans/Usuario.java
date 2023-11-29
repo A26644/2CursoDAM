@@ -1,6 +1,8 @@
 package com.example.myapplication.beans;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
     // ATRIBUTOS
     private Integer id;
     private String nombre;
@@ -17,6 +19,10 @@ public class Usuario {
 
     public Usuario() {
 
+    }
+
+    public Usuario(Integer id) {
+        this.id = id;
     }
 
     public Usuario(String email, String pass) {

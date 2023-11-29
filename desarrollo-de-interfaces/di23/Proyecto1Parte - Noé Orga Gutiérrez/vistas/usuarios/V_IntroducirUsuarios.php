@@ -29,10 +29,6 @@
             <option>M</option>
         </select>
     </div>
-    <div class="col-md-2">
-        <label for="inputZip" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="IntroducirContrasena" name="intPass" required>
-    </div>
     <div class="col-12">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="IntroducirActivo" name="intActivo">

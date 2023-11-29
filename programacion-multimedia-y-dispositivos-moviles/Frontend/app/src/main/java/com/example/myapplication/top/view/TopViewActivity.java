@@ -4,10 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+
+import com.example.myapplication.loggedScreen.view.LoggedScreenActivity;
 import com.example.myapplication.login.view.ViewLoginActivity;
 import com.example.myapplication.top.ContractTop;
 import com.example.myapplication.top.adapter.TopAdapter;
@@ -34,6 +40,8 @@ public class TopViewActivity extends AppCompatActivity implements ContractTop.Vi
 
 
     }
+
+
 
     private void initComponentes() {
         topPresenter.loadTop();

@@ -1,25 +1,37 @@
 <?php
 $usuarios = $datos['usuarios'];
-echo '<div id="header">
-            <div>ID</div>
-            <div>Apellido 1</div>
-            <div>Apellido 2</div>
-            <div>Nombre</div>
-            <div>Activo</div>
-            <div>Editar</div>
-            <div>Eliminar</div>
-        </div>
-        <div class="contenidoCargado">';
-foreach ($usuarios as $fila) {
-    echo '<div class="fila"  id="fila' . $fila['id_Usuario'] . '">
-                <div name="modId">' . $fila['id_Usuario'] . '</div>
-                <div class="id' . $fila['id_Usuario'] . ' campo" name="modApellido1">' . $fila['apellido_1'] . '</div>
-                <div class="id' . $fila['id_Usuario'] . ' campo" name="modApellido2">' . $fila['apellido_2'] . '</div>
-                <div class="id' . $fila['id_Usuario'] . ' campo" name="modNombre">' . $fila['nombre'] . '</div>
-                <div class="id' . $fila['id_Usuario'] . ' campo" name="modActivo">' . $fila['activo'] . '</div>
-                <div class="campo"><button id="btnId' . $fila['id_Usuario'] . '" onclick="vistaEditarUsuario(' . $fila['id_Usuario'] . ')">Editar</button></div>
-                <div class="campo"><button id="btnRmvId' . $fila['id_Usuario'] . '" class="eliminar" onclick="eliminarUsuario(' . $fila['id_Usuario'] . ')">Eliminar</button></div>
-            </div>';
+// AVERIGUAR EL NUMERO TOTAL DE FILAS
+$resto = sizeof($usuarios) % 10;
+$filas = (sizeof($usuarios) - $resto) / 10;
+if ($resto != 0) {
+    $filas++;
 }
-echo '</div>';
+echo $filas;
+echo '<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Login</th>
+                    <th scope="col">Apellido 1</th>
+                    <th scope="col">Apellido 2</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>';
+foreach ($usuarios as $fila) {
+    echo '       <tr>
+                    <th>' . $fila['login'] . '</th>
+                    <td>' . $fila['apellido_1'] . '</td>
+                    <td>' . $fila['apellido_2'] . '</td>
+                    <td>' . $fila['nombre'] . '</td>
+                    <td><button type="button" class="btn btn-success" onclick="cogerValores(' . $fila['id_Usuario'] . ')">Modificar</button></td>
+                    <td><button type="button" class="btn btn-danger" onclick="eliminarUsuario(event, ' . $fila['id_Usuario'] . ')">Eliminar</button></td>
+                </tr>
+    ';
+}
+
+echo '            </tbody>
+        </table>';
+
 ?>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,11 +35,11 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull TopAdapter.ViewHolder holder, int position) {
         TopData data = topData.get(position);
-        holder.Username.setText(data.getNombre());
-        holder.saleNumber.setText(String.valueOf(data.getNumeroVentas()));
-        holder.userEmail.setText(data.getEmail());
-        holder.userLast1.setText(data.getApellido1());
-        holder.userLast2.setText(data.getApellido2());
+        holder.userSaleNumber.setText(String.valueOf(position));
+        holder.userSales.setText(String.valueOf(data.getNumeroVentas()));
+        holder.userSaleName.setText(data.getNombre());
+        holder.userSaleEmail.setText(data.getEmail());
+
     }
 
     @Override
@@ -47,20 +48,20 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView Username;
-        TextView saleNumber;
-        TextView userEmail;
-        TextView userLast1;
-        TextView userLast2;
+        TextView userSaleNumber;
+        TextView userSales;
+        TextView userSaleName;
+        TextView userSaleEmail;
+
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            Username = itemView.findViewById(R.id.Username);
-            saleNumber = itemView.findViewById(R.id.saleNumber);
-            userEmail = itemView.findViewById(R.id.userEmail);
-            userLast1 = itemView.findViewById(R.id.userLast1);
-            userLast2 = itemView.findViewById(R.id.userLast2);
+            userSaleNumber = itemView.findViewById(R.id.userSaleNumber);
+            userSales = itemView.findViewById(R.id.userSales);
+            userSaleName = itemView.findViewById(R.id.userSaleName);
+            userSaleEmail = itemView.findViewById(R.id.userSaleEmail);
+
 
         }
     }

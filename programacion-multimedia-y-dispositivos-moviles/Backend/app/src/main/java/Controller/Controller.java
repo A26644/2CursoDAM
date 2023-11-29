@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 
+import Action.CategoriaAction;
 import Action.DireccionAction;
 import Action.FavoritoAction;
 import Action.ProductAction;
@@ -48,6 +49,10 @@ public class Controller extends HttpServlet {
                 break;
             case "VALORACION":
                 json = new ValoracionAction().execute(actionSplitted[1], req, resp);
+                break;
+            case "CATEGORIA":
+                json = new CategoriaAction().execute(actionSplitted[1], req, resp);
+                break;
         }
         resp.getWriter().write(json);
     }

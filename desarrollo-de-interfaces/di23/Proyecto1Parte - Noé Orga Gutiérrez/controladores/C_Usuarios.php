@@ -39,6 +39,11 @@ class C_Usuarios extends Controlador
         Vista::render('vistas/usuarios/V_IntroducirUsuarios.php');
     }
 
+    public function getVistaEditarUsuario()
+    {
+        Vista::render('vistas/usuarios/V_EditarUsuario.php');
+    }
+
     public function buscarUsuarios($filtros = array())
     {
         $usuarios = $this->modelo->buscarUsuarios($filtros);
@@ -63,7 +68,6 @@ class C_Usuarios extends Controlador
     }
     public function editarUsuario($filtros = array())
     {
-        $respuesta = '';
         $filasModificasdas = $this->modelo->editarUsuario($filtros);
 
         echo $filasModificasdas;
@@ -73,6 +77,13 @@ class C_Usuarios extends Controlador
 
         $filasModificadas = $this->modelo->eliminarUsuario($filtros);
         echo $filasModificadas;
+    }
+    public function cargarValoresUsuario($filtros = array())
+    {
+        $usuario = $this->modelo->cargarValoresUsuario($filtros);
+        $string = json_encode($usuario);
+        echo $string;
+
     }
 
 }

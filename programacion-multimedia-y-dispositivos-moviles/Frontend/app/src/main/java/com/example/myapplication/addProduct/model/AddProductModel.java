@@ -37,6 +37,7 @@ public class AddProductModel implements ContractAddProduct.Model{
             @Override
             public void onResponse(Call<AddProductData> call, Response<AddProductData> response) {
                 if (response.isSuccessful()) {
+                    System.out.println(response.body());
                     if (response.body().getId() == 1){
                         addProductListener.onFinishedAddProduct(response.body());
                     }else{
@@ -48,7 +49,7 @@ public class AddProductModel implements ContractAddProduct.Model{
 
             @Override
             public void onFailure(Call<AddProductData> call, Throwable t) {
-
+                System.out.println(t.getMessage());
             }
         });
     }

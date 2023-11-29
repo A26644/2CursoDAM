@@ -20,6 +20,9 @@ public class UsuarioAction {
             case "LOGIN":
                 json = login(req, resp);
                 break;
+            case "FINDMOSTSTAR":
+                json = findMostStar(req, resp);
+                break;
         }
         return json;
     }
@@ -35,6 +38,10 @@ public class UsuarioAction {
     public String findMost(HttpServletRequest req, HttpServletResponse resp) {
         return gson.toJson(new UsuarioDAO().findMost());
 
+    }
+
+    public String findMostStar(HttpServletRequest req, HttpServletResponse resp) {
+        return gson.toJson(new UsuarioDAO().findMostStar());
     }
 
 }
