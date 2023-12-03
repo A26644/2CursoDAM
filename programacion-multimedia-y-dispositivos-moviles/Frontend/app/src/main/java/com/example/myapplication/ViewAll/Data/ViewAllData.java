@@ -10,6 +10,16 @@ public class ViewAllData implements Serializable {
     String marca;
     Double precio;
     String descripcion;
+    String imagen;
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     String nombre;
     String estado;
     String color;

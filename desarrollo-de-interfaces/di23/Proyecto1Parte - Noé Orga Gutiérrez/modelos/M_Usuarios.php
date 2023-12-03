@@ -8,35 +8,34 @@ class M_Usuarios extends Modelo
 
     public function __construct()
     {
-        parent::__construct(); //ejecuta constructor del padre
+        parent::__construct();
         $this->DAO = new DAO();
     }
 
     public function buscarUsuarios($filtros = array())
     {
+        $paginaActual = '';
+        $numUsuariosPorPagina = '';
         $b_texto = '';
         extract($filtros);
-
-        $SQL = "SELECT * FROM usuarios WHERE 1=1 ";
+        $paginaActual--;
+        $SQL = "SELECT * FROM usuarios ";
 
         if ($b_texto != '') {
-            $aTexto = explode(' ', $b_texto);
-            $SQL .= " AND (1=2 ";
-            foreach ($aTexto as $palabra) {
-                $SQL .= " OR nombre LIKE '%" . $palabra . "%'";
-                $SQL .= " OR apellido_1 LIKE '%" . $palabra . "%'";
-                $SQL .= " OR apellido_2 LIKE '%" . $palabra . "%'";
-                $SQL .= ")";
-            }
+            $SQL .= "WHERE UPPER(nombre) LIKE UPPER('%".$b_texto."%')
+                    OR UPPER(apellido_1) LIKE UPPER('%".$b_texto."%')
+                    OR UPPER(apellido_2) LIKE UPPER('%".$b_texto."%') ";
         }
 
         if ($sexo == 'ASC') {
-            $SQL .= "ORDER BY fecha_Alta";
+            $SQL .= "ORDER BY fecha_Alta ";
         }
         if ($sexo == 'DESC') {
-            $SQL .= "ORDER BY fecha_Alta DESC";
-            # code...
+            $SQL .= "ORDER BY fecha_Alta DESC ";
         }
+
+        $SQL .= "LIMIT " . ($numUsuariosPorPagina * $paginaActual) . "," . $numUsuariosPorPagina;
+
         $usuarios = $this->DAO->consultar($SQL);
 
         return $usuarios;
@@ -63,7 +62,6 @@ class M_Usuarios extends Modelo
             $SQL .= "AND pass = '$pass' ";
         }
 
-        echo ($SQL);
         $usuarios = $this->DAO->consultar($SQL);
 
         return $usuarios;
@@ -86,12 +84,20 @@ class M_Usuarios extends Modelo
         } else {
             $intActivo = 'N';
         }
-        // MONTAR LA SQL
-        $SQL = "INSERT INTO usuarios (nombre, apellido_1, apellido_2, sexo, fecha_Alta, mail, login, pass, activo) VALUES ('$intNombre', '$intApellido1', '$intApellido2', '$intSexo', NOW(), '$intEmail',  '$intLogin', '$intPass', '$intActivo' )";
-
-        $idUsuario = $this->DAO->insertar($SQL);
-
-        return $idUsuario;
+        // COMPROBAR SI EL USUARIO EXISTE CON EL LOGIN
+        $SQL = "SELECT login FROM usuarios WHERE login = '$intLogin'";
+        $existeLogin = $this->DAO->consultar($SQL);
+        $resultado = '';
+        if (isset($existeLogin[0]['login'])) {
+            $SQL = "UPDATE usuarios SET apellido_1 = '$intApellido1', apellido_2 = '$intApellido2', nombre = '$intNombre', activo = '$intActivo' WHERE login = '$intLogin'";
+            $this->DAO->actualizar($SQL);
+            $resultado = 'UPDATED';
+        }else{
+            $SQL = "INSERT INTO usuarios (nombre, apellido_1, apellido_2, sexo, fecha_Alta, mail, login, pass, activo) VALUES ('$intNombre', '$intApellido1', '$intApellido2', '$intSexo', NOW(), '$intEmail',  '$intLogin', '$intPass', '$intActivo' )";
+            $this->DAO->insertar($SQL);
+            $resultado = 'ADDED';
+        }
+        return $resultado;
     }
     public function editarUsuario($filtros = array())
     {
@@ -131,6 +137,13 @@ class M_Usuarios extends Modelo
         // MONTAR LA SQL
         $SQL = "DELETE FROM usuarios WHERE id_Usuario = $remId";
         return $this->DAO->borrar($SQL);
+    }
+    public function countAllUsuarios()
+    {
+        // REALIZAR LA CONSULTA
+        $SQL = "SELECT COUNT(*) AS numUsuarios FROM usuarios";
+        $numeroUsuario = $this->DAO->consultar($SQL);
+        return $numeroUsuario[0]['numUsuarios'];
     }
 
 }

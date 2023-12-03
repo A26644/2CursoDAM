@@ -57,6 +57,9 @@ public class AddProductActivity extends AppCompatActivity implements ContractAdd
     @Override
     public void onSuccessAddProduct(AddProductData addProductData) {
         Toast.makeText(this, "Producto añadido con exito", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(AddProductActivity.this, LoggedScreenActivity.class);
+        intent.putExtra("id", getIntent().getExtras().getInt("id"));
+        startActivity(intent);
     }
 
     @Override

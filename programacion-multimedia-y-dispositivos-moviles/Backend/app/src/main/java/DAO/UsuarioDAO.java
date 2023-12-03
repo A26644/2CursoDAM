@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import MotorSQL.MotorPostgre;
-import model.Producto;
 import model.Usuario;
 import model.UsuarioNumVentas;
 import model.Valoracion;

@@ -1,2 +1,1 @@
-SELECT FECHA_ALTA
-FROM USUARIOS;
+SELECT login FROM usuarios WHERE login = 'asdf'

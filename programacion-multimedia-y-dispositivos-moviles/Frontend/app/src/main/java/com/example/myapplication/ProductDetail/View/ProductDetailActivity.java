@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import com.example.myapplication.beans.Direccion;
 import com.example.myapplication.beans.Producto;
 import com.example.myapplication.beans.Usuario;
 import com.example.myapplication.loggedScreen.view.LoggedScreenActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -51,6 +53,11 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
         TextView productState = findViewById(R.id.detailState);
         TextView productDesc = findViewById(R.id.detailDescription);
         TextView productSeller = findViewById(R.id.detailSellerName);
+        ImageView productImg = findViewById(R.id.productDetailImg);
+        String imgUrl = viewAllData.getImagen();
+        if (!imgUrl.equals("")) {
+            Picasso.get().load(imgUrl).into(productImg);
+        }
         productPrice.setText(String.valueOf(viewAllData.getPrecio() + " €"));
         productName.setText(String.valueOf(viewAllData.getNombre()));
         productColor.setText(String.valueOf("Color: " + viewAllData.getColor()));

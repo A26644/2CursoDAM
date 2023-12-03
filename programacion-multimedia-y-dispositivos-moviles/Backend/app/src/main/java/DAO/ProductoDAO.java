@@ -8,13 +8,14 @@ import model.Usuario;
 
 public class ProductoDAO {
     MotorPostgre motorPostgre = new MotorPostgre();
-
+    private final String IMAGEN1 = "http://10.0.2.2:8080/app/img/product/";
+    private final String IMAGEN2 = ".jpg";
     private final String FINDALL = "SELECT P.*, U.NOMBRE AS NOMBRE_USUARIO \r\n" + //
             "FROM PRODUCTO\r\n" + //
             "P INNER JOIN USUARIO U\r\n" + //
             "ON P.USUARIOID = U.USUARIO_ID\r\n" + //
             "WHERE U.USUARIO_ID <> ? AND VENDIDO = FALSE";
-    private final String ADD = "INSERT INTO PRODUCTO(usuarioid, marca, precio, fecha, descripcion, nombre, imagen, estado, color) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private final String ADD = "INSERT INTO PRODUCTO(usuarioid, marca, precio, fecha, descripcion, nombre, imagen, estado, color) VALUES (?, ?, ?, ?, ?, ?, 'imagen', ?, ?)";
     private final String FIND = "SELECT PRODUCTO_ID, MARCA, PRECIO, DESCRIPCION, NOMBRE, IMAGEN, ESTADO, COLOR FROM PRODUCTO WHERE USUARIOID = ?";
 
     private final String FINDFILTER = "SELECT P.*, U.NOMBRE AS NOMBRE_USUARIO FROM PRODUCTO P\r\n" + //
@@ -90,7 +91,7 @@ public class ProductoDAO {
                 producto.setFecha(rs.getDate("FECHA"));
                 producto.setDescripcion(rs.getString("DESCRIPCION"));
                 producto.setNombre(rs.getString("NOMBRE"));
-                producto.setImagen(rs.getString("IMAGEN"));
+                producto.setImagen(IMAGEN1 + rs.getString("IMAGEN") + IMAGEN2);
                 producto.setEstado(rs.getString("ESTADO"));
                 producto.setColor(rs.getString("COLOR"));
                 lstProduct.add(producto);
@@ -136,9 +137,8 @@ public class ProductoDAO {
             motorPostgre.getPpSt().setDate(4, bean.getFecha());
             motorPostgre.getPpSt().setString(5, bean.getDescripcion());
             motorPostgre.getPpSt().setString(6, bean.getNombre());
-            motorPostgre.getPpSt().setString(7, bean.getImagen());
-            motorPostgre.getPpSt().setString(8, bean.getEstado());
-            motorPostgre.getPpSt().setString(9, bean.getColor());
+            motorPostgre.getPpSt().setString(7, bean.getEstado());
+            motorPostgre.getPpSt().setString(8, bean.getColor());
             filasModificadas = motorPostgre.getPpSt().executeUpdate();
         } catch (Exception e) {
             System.out.println(e);

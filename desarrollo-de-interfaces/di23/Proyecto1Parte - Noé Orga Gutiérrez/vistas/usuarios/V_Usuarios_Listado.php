@@ -1,12 +1,5 @@
 <?php
 $usuarios = $datos['usuarios'];
-// AVERIGUAR EL NUMERO TOTAL DE FILAS
-$resto = sizeof($usuarios) % 10;
-$filas = (sizeof($usuarios) - $resto) / 10;
-if ($resto != 0) {
-    $filas++;
-}
-echo $filas;
 echo '<table class="table table-striped">
             <thead>
                 <tr>

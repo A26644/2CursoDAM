@@ -2,13 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="180dp"
-    android:layout_height="wrap_content"
+    android:layout_height="400dp"
     android:layout_margin="10dp"
     app:cardElevation="10dp"
     android:padding="20dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center">
@@ -22,20 +22,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Pantalon viejo" />
+                android:text="John Doe" />
 
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/productImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
             android:layout_weight="1"
             android:src="@drawable/ropa" />
 
         <TextView
             android:id="@+id/productPrice"
             android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#339933"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="25€" />
@@ -45,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="L" />
+            android:text="Perfecto" />
 
         <TextView
             android:id="@+id/productBrand"
@@ -58,7 +60,9 @@
             android:id="@+id/buyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comprar prenda" />
+            android:background="#FF007780"
+            android:text="Comprar prenda"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

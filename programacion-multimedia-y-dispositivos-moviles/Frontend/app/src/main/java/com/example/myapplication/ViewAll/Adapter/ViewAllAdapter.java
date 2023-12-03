@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.example.myapplication.ViewAll.Data.ViewAllData;
 import com.example.myapplication.ViewAll.View.ViewAllActivity;
 import com.example.myapplication.loggedScreen.data.OnLoadSaleData;
 import com.example.myapplication.loggedScreen.view.LoggedScreenActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -25,11 +27,13 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
     private ArrayList<ViewAllData> lstProduct;
     private LayoutInflater inflater;
     private Bundle extras;
+
     public ViewAllAdapter(Context context, ArrayList<ViewAllData> lstProduct, Intent intent) {
         this.lstProduct = lstProduct;
         this.inflater = LayoutInflater.from(context);
         this.extras = intent.getExtras();
     }
+
     @NonNull
     @Override
     public ViewAllAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,16 +43,21 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewAllAdapter.ViewHolder holder, int position) {
-            ViewAllData data = lstProduct.get(position);
-            holder.id = data.getId();
-            holder.productSellerId = data.getUsuario().getId();
-            holder.productBrand.setText(data.getMarca());
-            holder.productPrice.setText(String.valueOf(data.getPrecio() + " €"));
-            holder.productSellerName.setText(data.getUsuario().getNombre());
-            holder.productColor = data.getColor();
-            holder.productState.setText(data.getEstado());
-            // Hacer que el boton funcione
-            holder.buyButton.setOnClickListener( e -> {
+        ViewAllData data = lstProduct.get(position);
+        holder.id = data.getId();
+        holder.productSellerId = data.getUsuario().getId();
+        holder.productBrand.setText("Marca: " + data.getMarca());
+        holder.productPrice.setText(String.valueOf(data.getPrecio() + " €"));
+        holder.productSellerName.setText(data.getUsuario().getNombre());
+        holder.productColor = data.getColor();
+        holder.productState.setText("Estado: " + data.getEstado());
+        String imgUrl = data.getImagen();
+        System.out.println("La imagen que estoy cogiendo es: " + data.getImagen());
+        if (!imgUrl.equals("")) {
+            Picasso.get().load(imgUrl).into(holder.productImage);
+        }
+        // Hacer que el boton funcione
+        holder.buyButton.setOnClickListener(e -> {
             View itemView = holder.itemView;
             holder.buyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -60,7 +69,7 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
                 }
             });
 
-            });
+        });
     }
 
     @Override
@@ -76,8 +85,10 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         TextView productPrice;
         TextView productName;
         String productColor;
+        ImageView productImage;
         TextView productState;
         Button buyButton;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             productSellerName = itemView.findViewById(R.id.productSellerName);
@@ -86,6 +97,7 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
             productName = itemView.findViewById(R.id.productName);
             productState = itemView.findViewById(R.id.productState);
             buyButton = itemView.findViewById(R.id.buyButton);
+            productImage = itemView.findViewById(R.id.productImage);
         }
     }
 }

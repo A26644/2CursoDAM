@@ -9,9 +9,7 @@ function cargarUnScript(url) {
 function getVistaMenuSeleccionado(controlador, metodo) {
     console.log("Has entrado a la funcion con este metodo: " + metodo)
     let opciones = { method: "GET" };
-
     let parametros = "controlador=" + controlador + "&metodo=" + metodo;
-
     fetch("C_Ajax.php?" + parametros, opciones)
         .then(res => {
             if (res.ok) {

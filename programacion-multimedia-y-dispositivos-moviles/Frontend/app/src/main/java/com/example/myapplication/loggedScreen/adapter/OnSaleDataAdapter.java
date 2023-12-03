@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.loggedScreen.data.OnLoadSaleData;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -35,12 +37,18 @@ public class OnSaleDataAdapter extends RecyclerView.Adapter<OnSaleDataAdapter.Vi
         OnLoadSaleData sale = lstSales.get(position);
         // RELLENAR CON LOS DATOS
         holder.productName.setText(sale.getNombre());
-        holder.productBrand.setText(sale.getMarca());
-        holder.productPrice.setText(String.valueOf(sale.getPrecio()));
-        holder.productState.setText(sale.getEstado());
+        holder.productBrand.setText("Marca: " + sale.getMarca());
+        holder.productPrice.setText(String.valueOf(sale.getPrecio()) + "€");
+        holder.productState.setText("Estado: " + sale.getEstado());
         holder.productDesc = sale.getDescripcion();
         holder.productColor = sale.getColor();
+        String imgUrl = sale.getImagen();
+        if (!imgUrl.equals("")) {
+            Picasso.get().load(imgUrl).into(holder.imagen);
+        }
+        System.out.println("He cargado un producto");
     }
+
 
     @Override
     public int getItemCount() {
@@ -54,6 +62,7 @@ public class OnSaleDataAdapter extends RecyclerView.Adapter<OnSaleDataAdapter.Vi
         String productDesc = "";
         TextView productState;
         String productColor = "";
+        ImageView imagen;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -62,6 +71,7 @@ public class OnSaleDataAdapter extends RecyclerView.Adapter<OnSaleDataAdapter.Vi
             productPrice = itemView.findViewById(R.id.productPrice);
             productState = itemView.findViewById(R.id.productState);
             productBrand = itemView.findViewById(R.id.productBrand);
+            imagen = itemView.findViewById(R.id.imagenUrl);
 
 
         }

@@ -1,7 +1,6 @@
 <?php
 ?>
-<form id="formularioBuscar" name="formBuscar">
-
+<form id="formularioBuscar" name="formBuscar" onsubmit="buscarUsuarios(event)">
     Nombre:
     <br>
     <label for="b_texto">
@@ -12,15 +11,22 @@
     <br>
     <label for="b_texto">
         <select name="sexo" id="sexo">
-            <option value="--">--</option>
             <option value="ASC">Ordenar por fecha de alta ascendente</option>
             <option value="DESC">Ordenar por fecha de alta descendente</option>
         </select>
     </label>
     <br>
-    <button type="button" onclick="buscarUsuarios()">Buscar</button>
-</form>
+        <label>Nº Usuarios por pagina: </label>
+    <input type="number" name="numUsuariosPorPagina" min="1" required id="numeroUsuariosPorPagina" onchange="resetearPagina()">
+    <button type="submit">Buscar</button><br>
+    <label>Pagina</label>
+    <button onclick="modificarPagina('<<')"><<</button>
+    <button onclick="modificarPagina('<')"><</button>
+    <input name="paginaActual" id="paginaActual" value="1" min="1" max="1" required placeholder="Ir a página"  type="number">
+    <button onclick="modificarPagina('>')">></button>
+    <button onclick="modificarPagina('>>')">>></button>
 
+</form>
 <div id="capaResultadosBusqueda">
 
 </div>

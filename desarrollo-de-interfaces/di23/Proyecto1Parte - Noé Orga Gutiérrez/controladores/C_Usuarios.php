@@ -25,7 +25,7 @@ class C_Usuarios extends Controlador
 
         if (!empty($usuarios)) {
             $_SESSION['usuario'] = $usuarios[0]['login'];
-            $valido = "S";
+            $valido              = "S";
         }
         return $valido;
     }
@@ -36,6 +36,7 @@ class C_Usuarios extends Controlador
     }
     public function getVistaIntroducirUsuarios()
     {
+
         Vista::render('vistas/usuarios/V_IntroducirUsuarios.php');
     }
 
@@ -46,24 +47,27 @@ class C_Usuarios extends Controlador
 
     public function buscarUsuarios($filtros = array())
     {
-        $usuarios = $this->modelo->buscarUsuarios($filtros);
+        extract($filtros);
+        // $numUsuarios = $this->modelo->countAllUsuarios();
+        $usuarios    = $this->modelo->buscarUsuarios($filtros);
+        //     $numFilas = Vista::render('vistas/Usuarios/V_Paginador.php',[
+        //     'numUsuarios' => $numUsuarios,
+        //     'numUsuariosPorPagina' => 10,
+        // ]);
+
+
+
 
         Vista::render(
             'vistas/Usuarios/V_Usuarios_Listado.php',
             array('usuarios' => $usuarios)
         );
-
     }
     public function introducirUsuario($filtros = array())
     {
         $respuesta = '';
-        $idUsuario = $this->modelo->introducirUsuario($filtros);
-        if ($idUsuario > 0) {
-            $respuesta = "okay";
-        } else {
-            $respuesta = 'error';
-        }
-
+        $resultado = $this->modelo->introducirUsuario($filtros);
+        $respuesta = $resultado;
         echo $respuesta;
     }
     public function editarUsuario($filtros = array())
@@ -81,9 +85,14 @@ class C_Usuarios extends Controlador
     public function cargarValoresUsuario($filtros = array())
     {
         $usuario = $this->modelo->cargarValoresUsuario($filtros);
-        $string = json_encode($usuario);
+        $string  = json_encode($usuario);
         echo $string;
 
+    }
+    public function countAllUsuarios()
+    {
+        $numUsuarios = $this->modelo->countAllUsuarios();
+        echo $numUsuarios;
     }
 
 }
