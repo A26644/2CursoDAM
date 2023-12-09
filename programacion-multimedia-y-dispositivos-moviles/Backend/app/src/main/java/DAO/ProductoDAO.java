@@ -39,7 +39,9 @@ public class ProductoDAO {
         if (!filterNumbers[1].equalsIgnoreCase("")) {
             base += "AND UPPER(P.NOMBRE) LIKE UPPER('%" + filterNumbers[1] + "%')";
         }
-        base += " AND USUARIOID <> " + usuarioId + " AND VENDIDO = FALSE GROUP BY PRODUCTO_ID, U.NOMBRE";
+        base += " AND USUARIOID <> " + usuarioId
+                + " AND VENDIDO = FALSE GROUP BY PRODUCTO_ID, U.NOMBRE HAVING COUNT(DISTINCT CP.CATEGORIAID) = "
+                + filtrosArray.length;
         System.out.println("Esta es la consulta: " + FINDFILTER + base);
         try {
             motorPostgre.preparePreparedStatement(FINDFILTER + base);
@@ -59,7 +61,7 @@ public class ProductoDAO {
                 producto.setFecha(rs.getDate("FECHA"));
                 producto.setDescripcion(rs.getString("DESCRIPCION"));
                 producto.setNombre(rs.getString("NOMBRE"));
-                producto.setImagen(rs.getString("IMAGEN"));
+                producto.setImagen(IMAGEN1 + rs.getString("IMAGEN") + IMAGEN2);
                 producto.setEstado(rs.getString("ESTADO"));
                 producto.setColor(rs.getString("COLOR"));
                 lstProduct.add(producto);
@@ -116,7 +118,7 @@ public class ProductoDAO {
                 producto.setPrecio(rs.getDouble("PRECIO"));
                 producto.setDescripcion(rs.getString("DESCRIPCION"));
                 producto.setNombre(rs.getString("NOMBRE"));
-                producto.setImagen(rs.getString("IMAGEN"));
+                producto.setImagen(IMAGEN1 + rs.getString("IMAGEN") + IMAGEN2);
                 producto.setEstado(rs.getString("ESTADO"));
                 producto.setColor(rs.getString("COLOR"));
                 lstProductos.add(producto);

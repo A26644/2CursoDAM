@@ -103,9 +103,6 @@ function cogerValores(id) {
             let apellido1 = document.getElementById("IntroducirApellido1")
             let apellido2 = document.getElementById("IntroducirApellido2")
             let sexo = document.getElementById("Sex")
-            email.removeAttribute('required')
-            login.removeAttribute('required')
-            nombre.removeAttribute('required')
             apellido1.removeAttribute('required')
             apellido2.removeAttribute('required')
             email.value = res[0].mail
@@ -133,9 +130,11 @@ function modificarPagina(accion) {
                 case '<':
                     if (paginador.value > 1) {
                         paginador.value--;
+
                     }
                     break;
                 case '>':
+                    console.log("estoy comparando " +paginador.value + "")
                     if (paginador.value < valorMax) {
                         console.log("subiendo de valor")
                         paginador.value++;

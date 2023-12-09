@@ -6,17 +6,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.myapplication.BoughtProducts.View.MyBoughtProductsActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.ViewAll.Adapter.ViewAllAdapter;
 import com.example.myapplication.ViewAll.Data.FilterProductsData;
 import com.example.myapplication.ViewAll.Data.ViewAllData;
 import com.example.myapplication.ViewAll.Presenter.ViewAllPresenter;
 import com.example.myapplication.ViewAll.ViewAllContract;
+import com.example.myapplication.addProduct.view.AddProductActivity;
 import com.example.myapplication.loggedScreen.data.CategoriaData;
+import com.example.myapplication.loggedScreen.view.LoggedScreenActivity;
+import com.example.myapplication.top.view.TopViewActivity;
+import com.example.myapplication.topRated.View.TopRatedActivity;
 
 import java.util.ArrayList;
 
@@ -108,5 +116,62 @@ public class ViewAllActivity extends AppCompatActivity implements ViewAllContrac
             FilterProductsData filterProductsData = new FilterProductsData(filtros, "", getIntent().getExtras().getInt("id"));
             presenter.filterProducts(filterProductsData);
         }
+    }
+    private void showMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(ViewAllActivity.this, view);
+        popupMenu.getMenuInflater().inflate(R.menu.pop_up_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if (item.getItemId() == R.id.products) {
+                    PopupMenu subPopupMenu = new PopupMenu(ViewAllActivity.this, view);
+                    subPopupMenu.getMenuInflater().inflate(R.menu.products_menu, subPopupMenu.getMenu());
+                    subPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            if (item.getItemId() == R.id.addProduct) {
+                                Intent intent = new Intent(ViewAllActivity.this, AddProductActivity.class);
+                                Bundle extras = getIntent().getExtras();
+                                intent.putExtra("id", extras.getInt("id"));
+                                startActivity(intent);
+                            } else {
+                                Intent intent = new Intent(ViewAllActivity.this, ViewAllActivity.class);
+                                Bundle extras = getIntent().getExtras();
+                                intent.putExtra("id", extras.getInt("id"));
+                                startActivity(intent);
+                            }
+                            return false;
+                        }
+                    });
+                    subPopupMenu.show();
+                } else {
+                    PopupMenu subPopupMenu = new PopupMenu(ViewAllActivity.this, view);
+                    subPopupMenu.getMenuInflater().inflate(R.menu.users_menu, subPopupMenu.getMenu());
+                    subPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            System.out.println("Esta es la ID que ha clickado: " +item.getItemId());
+                            if (item.getItemId() == R.id.top10Sales) {
+                                Intent intent = new Intent(ViewAllActivity.this, TopViewActivity.class);
+                                startActivity(intent);
+                            } else if (item.getItemId() == R.id.myBoughtProducts) {
+                                Intent intent = new Intent(ViewAllActivity.this, MyBoughtProductsActivity.class);
+                                Bundle extras = getIntent().getExtras();
+                                intent.putExtra("id", extras.getInt("id"));
+                                startActivity(intent);
+                            } else {
+                                Intent intent = new Intent(ViewAllActivity.this, TopRatedActivity.class);
+                                startActivity(intent);
+                            }
+
+                            return false;
+                        }
+                    });
+                    subPopupMenu.show();
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }

@@ -1,0 +1,35 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "mysql",
+            "database": "di23",
+            "username": "root",
+            "password": "12344321"
+        },
+        {
+            "oracleOptions": {
+                "privilege": "SYSDBA",
+                "thickMode": false,
+                "autoCommit": false,
+                "lowerCase": false,
+                "limitPrefetchRows": false
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 1521,
+            "driver": "Oracle",
+            "name": "JuguetesDB",
+            "database": "XEPDB1",
+            "username": "SYS",
+            "password": "1234"
+        }
+    ]
+}

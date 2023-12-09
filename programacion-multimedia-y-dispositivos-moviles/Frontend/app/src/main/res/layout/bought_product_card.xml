@@ -8,9 +8,10 @@
     android:padding="20dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         android:layout_gravity="center">
 
         <LinearLayout
@@ -29,13 +30,6 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/ropa" />
-
         <TextView
             android:id="@+id/sellerName"
             android:layout_width="wrap_content"
@@ -52,6 +46,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/boughtButton"
+            android:background="#FF007780"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hacer una reseña" />

@@ -11,6 +11,7 @@ public class Contador {
 
     public synchronized Integer[] incrementarContador() {
         Integer[] array = new Integer[2];
+        Integer[] arrays = { 1200, 600 };
         array[0] = getValorActual();
         try {
             Random random = new Random();

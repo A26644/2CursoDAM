@@ -11,15 +11,15 @@
     </div>
     <div class="col-12">
         <label for="inputAddress" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="introducirNombre" placeholder="Jane" name="intNombre" required>
+        <input type="text" class="form-control" id="introducirNombre" placeholder="Jane" name="intNombre" required onkeydown="return /[a-z]/i.test(event.key)" >
     </div>
     <div class="col-12">
         <label for="inputAddress2" class="form-label">Apellido 1</label>
-        <input type="text" class="form-control" id="IntroducirApellido1" placeholder="Doe" name="intApellido1" required>
+        <input type="text" class="form-control" id="IntroducirApellido1" placeholder="Doe" name="intApellido1" required onkeydown="return /[a-z]/i.test(event.key)" >
     </div>
     <div class="col-md-6">
         <label for="inputCity" class="form-label">Apellido 2</label>
-        <input type="text" class="form-control" id="IntroducirApellido2" placeholder="Doe 2" name="intApellido2"
+        <input type="text" class="form-control" id="IntroducirApellido2" placeholder="Doe 2" name="intApellido2" onkeydown="return /[a-z]/i.test(event.key)"
             required>
     </div>
     <div class="col-md-4">

@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#E6E6E6"
         app:layout_constraintTop_toTopOf="@+id/include">
 
         <LinearLayout
@@ -43,6 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="25.00€"
+                    android:textColor="#339933"
                     android:textSize="40dp" />
 
                 <LinearLayout
@@ -115,6 +117,7 @@
             android:id="@+id/spinnerDireccion"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:padding="10dp"
             android:layout_weight="1" />
     </LinearLayout>
 

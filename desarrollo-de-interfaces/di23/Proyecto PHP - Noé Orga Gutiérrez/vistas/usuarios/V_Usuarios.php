@@ -19,13 +19,13 @@
         <label>Nº Usuarios por pagina: </label>
     <input type="number" name="numUsuariosPorPagina" min="1" required id="numeroUsuariosPorPagina" onchange="resetearPagina()">
     <button type="submit">Buscar</button><br>
-    <label>Pagina</label>
-    <button onclick="modificarPagina('<<')"><<</button>
+    <center>
+    <button onclick="modificarPagina('<<')" class="page-item"><<</button>
     <button onclick="modificarPagina('<')"><</button>
     <input name="paginaActual" id="paginaActual" value="1" min="1" max="1" required placeholder="Ir a página"  type="number">
     <button onclick="modificarPagina('>')">></button>
     <button onclick="modificarPagina('>>')">>></button>
-
+    </center>
 </form>
 <div id="capaResultadosBusqueda">
 
